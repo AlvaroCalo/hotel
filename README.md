@@ -8,7 +8,7 @@ This is an exercise for a course I attend to learn web development.
 For the Front-End I've used:
 1. HTML
 2. CSS
-4. JQuery library for the Carousel (Owl Carousel)
+3. Bootstrap
 
 For the Back-End I've used:
 1. PHP 

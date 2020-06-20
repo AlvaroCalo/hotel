@@ -8,29 +8,45 @@
     <meta name="author" content="Álvaro Calo" />
     <meta name="description" content="Hotel WebApp Proyect" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- CSS: reset, fontawesome, custom, owl -->
-    <link href="css/reset.css" rel="stylesheet" />
-    <link href="fontawesome-free-5.12.0-web/css/all.min.css" />
-    <link href="css/index.css" rel="stylesheet" />
-    <link rel="stylesheet" href="owl/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="owl/assets/owl.theme.default.min.css">
+    <!-- CSS:fontawesome, bootstrap, custom -->
+    <link rel="stylesheet" href="fontawesome-free-5.12.0-web/css/all.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <!-- JQuery -->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="owl/owl.carousel.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 
-    <nav>
-        <ul id="topNavBar">
-            <li class="navLi"><img class="logoNav" src="img/logo.png" alt="Hotel Logo" /></li>
-            <li class="navLi"><a href="index.html"> Hotel </a></li>
-            <li class="navLi"><a href="location.html"> Location </a></li>
-            <li class="navLi"><a href="guest-rooms.html"> Guest Rooms </a></li>
-            <li class="navLi"><a href="services.html"> Services </a></li>
-            <li class="navLi"><a href="sansebastian.html"> San Sebastián </a></li>
-            <li class="navLi"><a href="reservation.html"> Make a reservation </a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img id="navbarLogo" class="navbar-brand" alt="Hotel Logo" src="img/logo.png" />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Hotel<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="location.html">Location</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guest-rooms.html">Guest Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sansebastian.html">San Sebastián</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservation.html">Make a reservation</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="owl-carousel">
@@ -74,7 +90,6 @@
     <script>
         $(document).ready(function() {
             console.log("ready!");
-            $(".owl-carousel").owlCarousel();
         });
     </script>
 
