@@ -20,7 +20,6 @@ For the Back-End I've used:
 
 ### FRONT-END (responsive)
 #### Index:
-* Nav Bar: logo, and links: hotel (index), location, guest rooms, services, “san sebastián”, big button of “make reservation”
 * A carousel:
     * 1 - The hotel
     * 2 - Rooms
@@ -46,26 +45,11 @@ For the Back-End I've used:
     * Certification of quality, make very clear is no real
 * After <hr> the footer has copyright marks, and social media links
 
-#### Links of the thin Nav Bar:
-* Hotel pictures
-    * The navbar and the footer the same. Instead of the carousel a photo and after a box with the photos and in the left side of the title a filter for the photos. Clicking each photo opens a box with more photos
-* Contact us
-    * The same as location in the bigger navbar.
-    * The navbar and footer maintain
-    * A big map of the city with a pointer to the hotel (in santa clara)
-    * A box with two columns:
-* Location with a description and distances from the hotel to places of interest
-* Reservation and rates box (the same as in index) and contact info
-* View on map
-    * The location page
-* Telephone
-    * Make it possible to make a call
-
 #### Links of the bigger navbar:
 * Hotel: 
     * the index web page
 * Location
-    * Already discussed
+    * Location with a description and distances from the hotel to places of interest
 * Guest rooms 
     * The name itself clickable and with a dropdown with the each type of rooms
     * In the main room.html:
@@ -124,6 +108,9 @@ BACK-END
 ## Done:
 
 ### Front-End
+#### Index
+* Nav Bar: logo, and links: hotel (index), location, guest rooms, services, “san sebastián”, big button of “make reservation”
+
 
 
 
