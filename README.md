@@ -38,12 +38,6 @@ For the Back-End I've used:
     * Services
     * “San Sebastian
 * After those, all the viewport
-* Footer with four columns:
-    * Hotel location and contact info
-    * Links: legal disclaimer, privacy policy (here I have to put the photos and C stuff, make very clear it is not a real hotel)
-    * Rooms tipues
-    * Certification of quality, make very clear is no real
-* After <hr> the footer has copyright marks, and social media links
 
 #### Links of the bigger navbar:
 * Hotel: 
@@ -110,6 +104,11 @@ BACK-END
 ### Front-End
 #### Index
 * Nav Bar: logo, and links: hotel (index), location, guest rooms, services, “san sebastián”, big button of “make reservation”
+
+* Footer with four columns:
+    * Hotel name with slogan
+    * Social networks
+    * Copyright and legal notice
 
 
 
