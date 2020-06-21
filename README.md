@@ -20,6 +20,7 @@ For the Back-End I've used:
 
 ### FRONT-END (responsive)
 * Add custom font from Google fonts
+* Maybe scale-down the picture of San Sebastian panorama
 
 #### Links of the navbar:
 * Hotel: 
