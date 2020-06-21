@@ -20,6 +20,7 @@ For the Back-End I've used:
 
 ### FRONT-END (responsive)
 * Add custom font from Google fonts
+* Center the navbar
 #### Index:
 * After the carousel the elements are ¾ and centered
 * Three boxes with photos and links: 
