@@ -21,6 +21,8 @@ For the Back-End I've used:
 ### FRONT-END (responsive)
 * Add custom font from Google fonts
 * Maybe scale-down the picture of San Sebastian panorama
+* Add copyright of the logo in legal notice
+* Correct the grammar of the third Card in index
 
 #### Links of the navbar:
 * Hotel: 
