@@ -20,11 +20,6 @@ For the Back-End I've used:
 
 ### FRONT-END (responsive)
 #### Index:
-* A carousel:
-    * 1 - The hotel
-    * 2 - Rooms
-    * 3 - Social Room
-    * 4 - Services: wifi, views…
 * After the carousel the elements are ¾ and centered
 * Three boxes with photos and links: 
     * meals services, link to services page
@@ -104,7 +99,12 @@ BACK-END
 ### Front-End
 #### Index
 * Nav Bar: logo, and links: hotel (index), location, guest rooms, services, “san sebastián”, big button of “make reservation”
-
+* A carousel:
+    * 1 - The hotel
+    * 2 - Rooms
+    * 3 - Social Room
+    * 4 - Services: wifi, views…
+    
 * Footer with four columns:
     * Hotel name with slogan
     * Social networks
