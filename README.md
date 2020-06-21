@@ -19,22 +19,25 @@ For the Back-End I've used:
 ## To do:
 
 ### FRONT-END (responsive)
+* Add custom font from Google fonts
 #### Index:
 * After the carousel the elements are ¾ and centered
 * Three boxes with photos and links: 
+**** done:
     * meals services, link to services page
     * availability and rates, reservation page
     * view services 
 * Two columns:	
     * ¾ a brief description of the hotel with a picture in the left side
     * ¼ online reservation, arrival date, nights and button. Tiny link (view rooms)
+
 * Top hotel of the city:  3 columns
-    * Rooms tipe
+    * Rooms type
     * Services
-    * “San Sebastian
+    * San Sebastian
 * After those, all the viewport
 
-#### Links of the bigger navbar:
+#### Links of the navbar:
 * Hotel: 
     * the index web page
 * Location

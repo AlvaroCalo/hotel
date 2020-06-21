@@ -96,8 +96,8 @@
     <!-- ======= End carousel ======= -->
 
     <!-- ======= Main ======= -->
-    <main class="container">
-        <section class="row">
+    <main class="container p-5">
+        <section class="row p-5">
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
                     <img src="img/cards/ronan-kruithof-llcX9pTjhXM-unsplash.jpg" class="card-img-top" alt="Our chef">
@@ -131,7 +131,34 @@
         </section>
 
         <section class="row">
-            <div class="col"></div>
+            <div class="col-4">
+                <img class="w-100" src="img/misc/humphrey-muleba-8V7Ny9B2Siw-unsplash.jpg" alt="Book a room for good sake!" />
+            </div>
+            <div class="col-4">
+                <p>Santa Clara hotel is a classy hotel in San Sebastian. We have 65 rooms, all of them with balcony or windows</p>
+                <ul>
+                    <li>50 standard rooms</li>
+                    <li>15 deluxe rooms</li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <div class="card border-light" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Book a room</h5>
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <label for="arrivalDate" class="card-subtitle mb-2 text-muted">Arrival date</label>
+                                <input type="datetime-local" name="arrivalDate" id="arrivalDate" />
+                            </div>
+                            <div class="form-group">
+                                <label for="nights" class="card-subtitle mb-2 text-muted">Nights</label>
+                                <input type="number" name="nights" id="nights" />
+                            </div>
+                            <input type="submit" value="Search!" class="btn btn-primary" />
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="row">
