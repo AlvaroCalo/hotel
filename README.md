@@ -57,6 +57,7 @@ For the Back-End I've used:
         * ¾ Services list with a picture in the left side
         * ¼ on-line reservartion
     * Second row, one column with pics of common areas: social room, cafeteria and gym
+    *(maybe menus???? from the index link)
 * San Sebastián
     * Navbar and footer
     * A slider with 4 San Sebastian pictures
@@ -104,7 +105,7 @@ BACK-END
     * 2 - Rooms
     * 3 - Social Room
     * 4 - Services: wifi, views…
-    
+
 * Footer with four columns:
     * Hotel name with slogan
     * Social networks
