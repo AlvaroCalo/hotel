@@ -20,8 +20,6 @@ For the Back-End I've used:
 
 ### FRONT-END (responsive)
 #### Links of the navbar:
-* Hotel: 
-    * the index web page
 * Location
     * Location with a description and distances from the hotel to places of interest
 * Guest rooms 
@@ -111,7 +109,9 @@ BACK-END
     * Social networks
     * Copyright and legal notice
 
-
+#### Links of the navbar:
+* Hotel: 
+    * the index web page
 
 
 ### Back-End
