@@ -20,7 +20,6 @@ For the Back-End I've used:
 
 ### FRONT-END (responsive)
 * Add custom font from Google fonts
-* Maybe scale-down the picture of San Sebastian panorama
 
 #### Links of the navbar:
 * Hotel: 
@@ -88,6 +87,8 @@ BACK-END
 ### Front-End
 * Center the navbar
 * Add copyright of the logo in legal notice
+* Scale-down the picture of San Sebastian panorama
+
 #### Index
 * Nav Bar: logo, and links: hotel (index), location, guest rooms, services, “san sebastián”, big button of “make reservation”
 * A carousel:
