@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
 #navbarLogo {
     width: 5em;
 }
@@ -9,4 +11,22 @@
 #sliderImg {
     width: 10px;
     height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+p,
+label,
+input,
+textarea,
+div,
+tab-pane {
+    font-family: 'Sriracha', cursive;
 }
