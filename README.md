@@ -19,6 +19,8 @@ For the Back-End I've used:
 ## To do:
 
 ### FRONT-END (responsive)
+* Add favicon
+
 #### Links of the navbar:
 * Location
     * Location with a description and distances from the hotel to places of interest
