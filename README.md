@@ -66,7 +66,6 @@ BACK-END
 * Admin-Manager (with custom views): 
     * Access to all
         * Customers
-        * Employees
         * Access to view and edit customer data
         * Charges to each cliente for different services
         * Rooms availability
