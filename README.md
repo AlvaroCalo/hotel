@@ -43,9 +43,8 @@ For the Back-End I've used:
     * Navbar and footer
     * A slider with 4 San Sebastian pictures (--> Scale down pictures)
     * A box with two rows
-        * First row, two columns
-            * First column: a picture in the left side and a description of the hotel on the right side
-            * Second column: online reservation
+        * First row, one columns
+            * A picture in the left side and online reservation in the right side
         * Second row: a picture gallery preview with click to bigger pictures
     
 * Make a reservation
