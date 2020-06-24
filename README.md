@@ -22,10 +22,8 @@ For the Back-End I've used:
 * Add favicon
 
 #### Links of the navbar:
-* Location
-    * Location with a description and distances from the hotel to places of interest
 * Guest rooms 
-    * The name itself clickable and with a dropdown with the each type of rooms
+    * The name itself clickable and with a dropdown with each type of rooms
     * In the main room.html:
         * The same navbar and footer
         * A brief description
@@ -35,6 +33,7 @@ For the Back-End I've used:
                 * A big picture after the navbar being the width all the viewport size
                 * A box with two columns: description of the room and online reservation
                 * After the box some pictures of the room
+
 * Services (only clickable)
     * Navbar, footer and slider
     * Two rows:
@@ -43,6 +42,7 @@ For the Back-End I've used:
         * ¼ on-line reservartion
     * Second row, one column with pics of common areas: social room, cafeteria and gym
     *(maybe menus???? from the index link)
+    
 * San Sebastián
     * Navbar and footer
     * A slider with 4 San Sebastian pictures
@@ -112,7 +112,8 @@ BACK-END
 #### Links of the navbar:
 * Hotel: 
     * the index web page
-
+* Location
+    * Location with a description and distances from the hotel to places of interest
 
 ### Back-End
 
