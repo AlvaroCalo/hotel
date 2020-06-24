@@ -53,7 +53,7 @@
     <!-- ======= End navbar ======= -->
 
     <!-- ======= Carousel ======= -->
-    <div id="carousel" class="carousel slide" data-ride="carousel">
+    <div id="carousel" class="carousel slide mb-3" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
             <li data-target="#carousel" data-slide-to="1"></li>
@@ -99,12 +99,55 @@
 
 
     <main>
-        <section></section>
-        <section></section>
-        <section></section>
+        <section class="row">
+            <div class="col-4">
+                <img class="w-75 m-5" src="img/misc/adi-goldstein-eNwPokqVAn0-unsplash.jpg" alt="Services" />
+            </div>
+            <div class="col-4 mt-5">
+                <ul>
+                    <h6>Services</h6>
+                    <li>The fastes Internet connection in the world</li>
+                    <li>Beach in fron of your room - 150 cm</li>
+                    <li>Jacuzzi&trade; without farting</li>
+                    <li>Burger King service in your room</li>
+                    <li>Garage if you dare to bring your car</li>
+                    <li>Dry cleaning and laundry for the most flirtatious</li>
+                    <li>Pets Allowed (we have a sea water Aquarium for them)</li>
+                </ul>
+            </div>
+            <div class="col-4 mt-5">
+                <!-- Check availability -->
+                <h5>Book a room</h5>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="arrivalDate" class="card-subtitle mb-2 text-muted">Arrival</label>
+                        <input type="datetime-local" name="arrivalDate" id="arrivalDate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nights" class="card-subtitle mb-2 text-muted">Nights</label>
+                        <input type="number" name="nights" id="nights" />
+                    </div>
+                    <input type="submit" value="Search!" class="btn btn-primary" />
+                </form>
+                <!-- End Check availability -->
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img class="w-75 m-5" src="img/misc/grandbeau-vinHzZDBYvo-unsplash.jpg" alt="Social room" />
+                </div>
+                <div class="col-4">
+                    <img class="w-75 m-5" src="img/misc/carolina-marinelli-PkbyxvkGWcU-unsplash.jpg" alt="Cafeteria" />
+                </div>
+                <div class="col-4">
+                    <img class="w-75 m-5" src="img/misc/risen-wang-20jX9b35r_M-unsplash.jpg" alt="Gym" />
+                </div>
+            </div>
+        </section>
+
+        <section class="row"></section>
     </main>
 
-    <footer class="d-flex justify-content-center" id="footer">
+    <footer class="d-flex justify-content-center m-3" id="footer">
         <div class="text-center">
             <h3>Santa Clara Hotel</h3>
             <p>The best hotel in San Sebastian, come to visit us!</p>
@@ -114,28 +157,6 @@
             <div>&copy; Copyright <strong>Santa Clara Hotel - <a href="legal.html">Legal notice</a></strong></div>
         </div>
     </footer>
-
-
-    <!--     <header> - Defines a header for a document or a section
-        <nav> - Defines a container for navigation links
-        <section> - Defines a section in a document
-        <article> - Defines an independent self-contained article
-        <aside> - Defines content aside from the content (like a sidebar)
-        <footer> - Defines a footer for a document or a section
-        <details> - Defines additional details
-        <summary> - Defines a heading for the <details> element 
-            
-            navbar
-            slider
-            una sección con tres columnas
-            una sección con dos columnas (una de dos unidades y otra de una unidad)
-            otra sección de 3 columnas como la primera
-            footer
-
-            navbar
-            main -> slider, 3 secciones (cor articles a modo columnas)
-            footer
-            -->
 
     <script>
         $(document).ready(function() {

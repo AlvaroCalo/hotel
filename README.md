@@ -34,15 +34,11 @@ For the Back-End I've used:
                 * A box with two columns: description of the room and online reservation
                 * After the box some pictures of the room
 
-* Services (only clickable)
-    * Navbar, footer and slider
-    * Two rows:
-        * First row: two columns:
-        * ¾ Services list with a picture in the left side
-        * ¼ on-line reservartion
-    * Second row, one column with pics of common areas: social room, cafeteria and gym
-    *(maybe menus???? from the index link)
+* Services (Dropdown for menus)
     
+
+* Menus
+    * I yet don't know how to arrange this page (maybe cards)
 * San Sebastián
     * Navbar and footer
     * A slider with 4 San Sebastian pictures
@@ -114,6 +110,14 @@ BACK-END
     * the index web page
 * Location
     * Location with a description and distances from the hotel to places of interest
+
+* Services (Dropdown for menus)
+    * Navbar, footer and slider
+        * Two rows:
+        * First row: two columns:
+            * ¾ Services list with a picture in the left side
+            * ¼ on-line reservartion
+        * Second row, 3 column with pics of common areas: social room, cafeteria and gym
 
 ### Back-End
 
