@@ -36,17 +36,18 @@ For the Back-End I've used:
 
 * Services (Dropdown for menus)
     
-
 * Menus
     * I yet don't know how to arrange this page (maybe cards)
+
 * San Sebastián
     * Navbar and footer
-    * A slider with 4 San Sebastian pictures
+    * A slider with 4 San Sebastian pictures (--> Scale down pictures)
     * A box with two rows
         * First row, two columns
             * First column: a picture in the left side and a description of the hotel on the right side
             * Second column: online reservation
         * Second row: a picture gallery preview with click to bigger pictures
+    
 * Make a reservation
     * The navbar and footer
     * A central box: Sign up, Log-in and after consult the availability and prices in arrival date and nights with a button to check
