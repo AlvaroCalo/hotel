@@ -67,15 +67,14 @@ BACK-END
     * Access to all
         * Customers
         * Employees
+        * Access to view and edit customer data
+        * Charges to each cliente for different services
         * Rooms availability
 * Customer (with the same views of the web): 
     * Sign up in the reservation link
     * Log in in the reservation link
     * Reservation page after sign up or log in
-    * User profile: View and edit reservations (the payment in the hotel)
-* Employees (with custom views):
-    * Access to view and edit customer data
-    * Charges to each cliente for different services
+    * User profile: View and edit reservations (the payment in the hotel)    
 
 
 ## Done:
