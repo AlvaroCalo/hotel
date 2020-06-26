@@ -39,13 +39,7 @@ For the Back-End I've used:
 * Menus
     * I yet don't know how to arrange this page (maybe cards)
 
-* San Sebastián
-    * Navbar and footer
-    * A slider with 4 San Sebastian pictures 
-    * A box with two rows
-        * First row, one columns
-            * A picture in the left side and online reservation in the right side
-        * Second row: a picture gallery preview with click to bigger pictures
+
     
 * Make a reservation
     * The navbar and footer
@@ -118,6 +112,14 @@ BACK-END
             * ¾ Services list with a picture in the left side
             * ¼ on-line reservartion
         * Second row, 3 column with pics of common areas: social room, cafeteria and gym
+
+* San Sebastián
+    * Navbar and footer
+    * A slider with 4 San Sebastian pictures 
+    * A box with two rows
+        * First row, one columns
+            * A picture in the left side and online reservation in the right side
+        * Second row: a picture gallery preview with click to bigger pictures
 
 ### Back-End
 
