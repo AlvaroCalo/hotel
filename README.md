@@ -41,7 +41,7 @@ For the Back-End I've used:
 
 * San Sebastián
     * Navbar and footer
-    * A slider with 4 San Sebastian pictures (--> Scale down pictures)
+    * A slider with 4 San Sebastian pictures 
     * A box with two rows
         * First row, one columns
             * A picture in the left side and online reservation in the right side
