@@ -36,7 +36,7 @@ For the Back-End I've used:
 
 * Services (Dropdown for menus)
     
-
+* **** NAVBAR update all pages with the changes in index
 
 
 * Put all html pages inside a folder: front-end (change links inside)
