@@ -52,18 +52,37 @@
     </nav>
     <!-- ======= End navbar ======= -->
 
-    <div class="owl-carousel">
-        <div>Contenido 1</div>
-        <div>Contenido 2</div>
-        <div>Contenido 3</div>
-        <div>Contenido 4</div>
-        <!--  https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html-->
-    </div>
-
-    <main>
-        <section></section>
-        <section></section>
-        <section></section>
+    <main class="container">
+        <section class="row text-center m-5">
+            <div class="col-6" id="login">
+                <h4>Log in</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="txtEmailL">Email address</label>
+                        <input type="email" class="form-control" id="txtEmailL" name="txtEmailL">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPasswordL">Password</label>
+                        <input type="password" class="form-control" id="txtPasswordL" name="txtPasswordL">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-6" id="sign-in">
+                <h4>Sign in</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="txtEmailS">Email address</label>
+                        <input type="email" class="form-control" id="txtEmails" name="txtEmailS">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPasswordS">Password</label>
+                        <input type="password" class="form-control" id="txtPasswordS" name="txtPasswordS">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer class="d-flex justify-content-center" id="footer">

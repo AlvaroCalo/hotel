@@ -40,16 +40,6 @@ For the Back-End I've used:
     * I yet don't know how to arrange this page (maybe cards)
 
 
-    
-* Make a reservation
-    * The navbar and footer
-    * A central box: Sign up, Log-in and after consult the availability and prices in arrival date and nights with a button to check
-    * When check button is hitted it charges underneath the availability of the rooms (more description on back-end functions)
-
-* The middle of the index page:
-* Three boxes
-
-
 * disclaimer COOKIES??
 
 
@@ -65,7 +55,8 @@ BACK-END
     * Sign up in the reservation link
     * Log in in the reservation link
     * Reservation page after sign up or log in
-    * User profile: View and edit reservations (the payment in the hotel)    
+    * When check button is hitted in the book rooms links it charges underneath the availability of the rooms
+    * User profile: View, edit reservations (the payment in the hotel), complete and update personal info    
 
 
 ## Done:
@@ -120,6 +111,10 @@ BACK-END
         * First row, one columns
             * A picture in the left side and online reservation in the right side
         * Second row: a picture gallery preview with click to bigger pictures
+
+* Make a reservation
+    * The navbar and footer
+    * A central box: Sign up, Log-in
 
 ### Back-End
 
