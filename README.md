@@ -36,10 +36,10 @@ For the Back-End I've used:
 
 * Services (Dropdown for menus)
     
-* Menus
-    * I yet don't know how to arrange this page (maybe cards)
 
 
+
+* Put all html pages inside a folder: front-end (change links inside)
 * disclaimer COOKIES??
 
 
@@ -111,7 +111,10 @@ BACK-END
         * First row, one columns
             * A picture in the left side and online reservation in the right side
         * Second row: a picture gallery preview with click to bigger pictures
-
+* Menus
+    * Navbar a footbar
+    * An intro paragraph
+    * Six cards, two rows
 * Make a reservation
     * The navbar and footer
     * A central box: Sign up, Log-in
