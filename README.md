@@ -19,7 +19,7 @@ For the Back-End I've used:
 ## To do:
 
 ### FRONT-END (responsive)
-* Add favicon
+* Add favicon (Added, pending to check)
 
 
 
