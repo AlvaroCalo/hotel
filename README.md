@@ -35,7 +35,7 @@ For the Back-End I've used:
                 * After the box some pictures of the room
 
 
-* Put all html pages inside a folder: front-end (change links inside)
+
 
 
 BACK-END
@@ -113,6 +113,8 @@ BACK-END
 * Make a reservation
     * The navbar and footer
     * A central box: Sign up, Log-in
+
+* Put all html pages inside a folder: front-end (change links inside)
 
 ### Back-End
 
