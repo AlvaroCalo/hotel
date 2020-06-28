@@ -23,18 +23,7 @@ For the Back-End I've used:
 
 #### Links of the navbar:
 * Guest rooms 
-    * The name itself clickable and with a dropdown with each type of rooms
-    * In the main room.html:
-        * The same navbar and footer
-        * A brief description
-        * links to each of one clickable room type with a picture, the picture is clickable and it gets bigger or goes to the description page depending on the button.
-            * Each room page (one room for with adapted bathroom): 
-                * same navbar and footer
-                * A big picture after the navbar being the width all the viewport size
-                * A box with two columns: description of the room and online reservation
-                * After the box some pictures of the room
-
-
+    * Two rows with three columns each with pictures of rooms and a brief description. Using cards an lorem ipsum
 
 
 
