@@ -21,13 +21,9 @@ For the Back-End I've used:
 ### FRONT-END (responsive)
 * Add favicon
 
-#### Links of the navbar:
-* Guest rooms 
-    * Two rows with three columns each with pictures of rooms and a brief description. Using cards an lorem ipsum
 
 
-
-BACK-END
+### BACK-END
 
 * Admin-Manager (with custom views): 
     * Access to all
@@ -95,6 +91,8 @@ BACK-END
         * First row, one columns
             * A picture in the left side and online reservation in the right side
         * Second row: a picture gallery preview with click to bigger pictures
+* Guest rooms 
+    * Two rows with three columns each with pictures of rooms and a brief description. Using cards an lorem ipsum
 * Menus
     * Navbar a footbar
     * An intro paragraph
