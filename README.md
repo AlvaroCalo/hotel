@@ -34,13 +34,8 @@ For the Back-End I've used:
                 * A box with two columns: description of the room and online reservation
                 * After the box some pictures of the room
 
-* Services (Dropdown for menus)
-    
-* **** NAVBAR update all pages with the changes in index
-
 
 * Put all html pages inside a folder: front-end (change links inside)
-* disclaimer COOKIES??
 
 
 BACK-END
@@ -57,7 +52,7 @@ BACK-END
     * Reservation page after sign up or log in
     * When check button is hitted in the book rooms links it charges underneath the availability of the rooms
     * User profile: View, edit reservations (the payment in the hotel), complete and update personal info    
-
+* disclaimer COOKIES??
 
 ## Done:
 

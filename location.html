@@ -23,8 +23,8 @@
         <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
             <img id="navbarLogo" class="navbar-brand" alt="Hotel Logo" src="img/logo.png" />
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -37,8 +37,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="guest-rooms.html">Guest Rooms</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="serviceClass">Services</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="menu.html">Menu</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sansebastian.html">San Sebastián</a>
@@ -125,8 +130,12 @@
     <!-- ======= End Footer ======= -->
 
     <script>
+        /*    https://stackoverflow.com/questions/17975922/how-to-change-active-class-while-click-to-another-link-in-bootstrap-use-jquery*/
         $(document).ready(function() {
             console.log("ready!");
+            $(".serviceClass").click(function() {
+                window.location = "services.html";
+            });
         });
     </script>
 

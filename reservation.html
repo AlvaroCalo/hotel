@@ -37,8 +37,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="guest-rooms.html">Guest Rooms</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="serviceClass">Services</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="menu.html">Menu</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sansebastian.html">San Sebastián</a>
@@ -96,31 +101,13 @@
         </div>
     </footer>
 
-
-    <!--     <header> - Defines a header for a document or a section
-        <nav> - Defines a container for navigation links
-        <section> - Defines a section in a document
-        <article> - Defines an independent self-contained article
-        <aside> - Defines content aside from the content (like a sidebar)
-        <footer> - Defines a footer for a document or a section
-        <details> - Defines additional details
-        <summary> - Defines a heading for the <details> element 
-            
-            navbar
-            slider
-            una sección con tres columnas
-            una sección con dos columnas (una de dos unidades y otra de una unidad)
-            otra sección de 3 columnas como la primera
-            footer
-
-            navbar
-            main -> slider, 3 secciones (cor articles a modo columnas)
-            footer
-            -->
-
     <script>
+        /*    https://stackoverflow.com/questions/17975922/how-to-change-active-class-while-click-to-another-link-in-bootstrap-use-jquery*/
         $(document).ready(function() {
             console.log("ready!");
+            $(".serviceClass").click(function() {
+                window.location = "services.html";
+            });
         });
     </script>
 
