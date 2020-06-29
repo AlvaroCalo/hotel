@@ -30,3 +30,7 @@ div,
 tab-pane {
     font-family: 'Sriracha', cursive;
 }
+
+.colorea {
+    background-color: yellow !important;
+}

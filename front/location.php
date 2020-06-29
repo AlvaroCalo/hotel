@@ -7,7 +7,7 @@ require_once("../phpfiles/functions.php");
 
 <head>
     <meta charset="utf-8" />
-    <title>Santa Clara - Hotel</title>
+    <title>Hilbert Hotel</title>
     <!-- metas -->
     <meta name="description" content="Hotel WebApp Proyect" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -31,7 +31,7 @@ require_once("../phpfiles/functions.php");
         <!-- ============= Map ==============-->
         <div class="row">
             <div class="col-8 p-2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11610.839074870992!2d-1.9975577!3d43.3203347!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDE5JzE3LjAiTiAxwrA1OSc1OC4wIlc!5e0!3m2!1ses!2ses!4v1592826066691!5m2!1ses!2ses" width="1100" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.972892752157!2d-1.9927576850912891!3d43.314826882264036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDE4JzUzLjQiTiAxwrA1OScyNi4xIlc!5e0!3m2!1ses!2ses!4v1593452135673!5m2!1ses!2ses" width="1100" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
         </div>
@@ -43,9 +43,9 @@ require_once("../phpfiles/functions.php");
             </div>
             <div class="col-4">
                 <p>
-                    In the middle of Concha Bay, the location is unique anywhere in the world.
+                    In the middle of the city, the location is unique anywhere in the world.
                     <ul>Distances to marvellous places:
-                        <li>0 meter to the Santa Clara Island</li>
+                        <li>23,12 meter to the Santa Clara Island</li>
                         <li>10 minutes by boat to the City Center</li>
                         <li>20 minutes swimming to the best beach in the world</li>
                     </ul>
@@ -63,7 +63,7 @@ require_once("../phpfiles/functions.php");
                 </div>
                 <div class="row">
                     <div class="col">E-mail</div>
-                    <div class="col">generalservices@santaclara.eu</div>
+                    <div class="col">generalservices@hilberthotel.eu</div>
                 </div>
             </div>
         </div>

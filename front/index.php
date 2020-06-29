@@ -7,7 +7,7 @@ require_once("../phpfiles/functions.php");
 
 <head>
     <meta charset="utf-8" />
-    <title>Santa Clara - Hotel</title>
+    <title>Hilbert Hotel</title>
     <!-- metas -->
     <meta name="description" content="Hotel WebApp Proyect" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -118,7 +118,7 @@ require_once("../phpfiles/functions.php");
                 <img class="w-100" src="../img/misc/humphrey-muleba-8V7Ny9B2Siw-unsplash.jpg" alt="Book a room for good sake!" />
             </div>
             <div class="col-4">
-                <p>Santa Clara hotel is a classy hotel in San Sebastian. We have 65 rooms, all of them with balcony or windows</p>
+                <p>Hilbert hotel is a classy hotel in San Sebastian. </p>
                 <ul>
                     <li>50 standard rooms</li>
                     <li>15 deluxe rooms</li>
@@ -136,7 +136,7 @@ require_once("../phpfiles/functions.php");
                 </div>
                 <div class="row">
                     <div class="col">E-mail</div>
-                    <div class="col">generalservices@santaclara.eu</div>
+                    <div class="col">generalservices@hilberthotel.eu</div>
                 </div>
             </div>
         </section>

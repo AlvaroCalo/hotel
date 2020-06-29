@@ -7,7 +7,7 @@ require_once("../phpfiles/functions.php");
 
 <head>
     <meta charset="utf-8" />
-    <title>Santa Clara - Hotel</title>
+    <title>Hilbert Hotel</title>
     <!-- metas -->
     <meta name="description" content="Hotel WebApp Proyect" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -101,7 +101,7 @@ require_once("../phpfiles/functions.php");
                 </div>
                 <div class="row">
                     <div class="col">E-mail</div>
-                    <div class="col">generalservices@santaclara.eu</div>
+                    <div class="col">generalservices@hilberthotel.eu</div>
                 </div>
             </div>
             <div class="row">

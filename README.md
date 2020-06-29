@@ -38,24 +38,38 @@ For the Back-End I've used:
 
 ### Database
 ## Tables
-* users: id, password, email, tel, streetName, postalCode, city, country
-* rooms: id, roomName, description, free, ocupied
+* users: id, password, email, rol, tel, streetName, postalCode, city, country
+* rooms: id, roomName, description
 * reservations: id, roomId, userId, arrival, departure
 
 
+# Pendiente
+* el login con sesión, si es admin ve una cosa y si es regular ve otra
+    * si es admin
+        * Lista de clientes (ve los perfiles y sus reservas)
+            * Editar clientes, añadir y borrar
+        * Reservas
+            * Ver y editar reservas
+    * si es regular
+        * Perfil
+            * Ver y modificar
+        * Habitaciones
+            * Reservar
+            * Anular reservas
+* sign in 
+    * solo usuarios
+CAMBIAR EL LOGOTIPO
 ### BACK-END
 
 * Admin-Manager (with custom views): 
     * Access to all
         * Customers
         * Access to view and edit customer data
-        * Charges to each cliente for different services
         * Rooms availability
 * Customer (with the same views of the web): 
     * Sign up in the reservation link
     * Log in in the reservation link
     * Reservation page after sign up or log in
-    * When check button is hitted in the book rooms links it charges underneath the availability of the rooms
     * User profile: View, edit reservations (the payment in the hotel), complete and update personal info    
 * disclaimer COOKIES??
 

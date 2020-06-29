@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200&display=swap');
+#navbarLogo {
+    width: 5em;
+}
+
+#footer {
+    background-color: #f8f9fa;
+}
+
+#sliderImg {
+    width: 10px;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Notable', sans-serif;
+}
+
+p,
+label,
+input,
+textarea,
+div,
+tab-pane {
+    font-family: 'MuseoModerno', cursive;
+}
