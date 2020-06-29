@@ -38,7 +38,7 @@ For the Back-End I've used:
 
 ### Database
 ## Tables
-* users: id, username, password, email, tel, streetName, postalCode, city, country
+* users: id, password, email, tel, streetName, postalCode, city, country
 * rooms: id, roomName, description, free, ocupied
 * reservations: id, roomId, userId, arrival, departure
 

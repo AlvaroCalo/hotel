@@ -14,7 +14,7 @@ require_once("../phpfiles/functions.php");
     <!-- CSS:fontawesome, bootstrap, custom -->
     <link rel="stylesheet" href="../fontawesome-free-5.12.0-web/css/all.min.css" />
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/front.css" />
     <!-- JQuery -->
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
