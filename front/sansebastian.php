@@ -66,22 +66,21 @@ require_once("../phpfiles/functions.php");
                 <img src="../img/misc/640px-San_Sebastian_Beach.jpg" alt="Donostia beach" class="w-50" />
             </div>
             <!-- End Picture -->
-            <!-- Check availability -->
             <div class="col-4 text-center">
-                <h5>Book a room</h5>
-                <form action="" method="POST">
-                    <div class="form-group">
-                        <label for="arrivalDate" class="card-subtitle mb-2 text-muted">Arrival</label>
-                        <input type="datetime-local" name="arrivalDate" id="arrivalDate" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nights" class="card-subtitle mb-2 text-muted">Nights</label>
-                        <input type="number" name="nights" id="nights" />
-                    </div>
-                    <input type="submit" value="Search!" class="btn btn-primary" />
-                </form>
+                <h5 class="p-3">Contact info</h5>
+                <div class="row">
+                    <div class="col">Phone number</div>
+                    <div class="col">943 666 666 669</div>
+                </div>
+                <div class="row">
+                    <div class="col">Fax</div>
+                    <div class="col">943 666 666 966</div>
+                </div>
+                <div class="row">
+                    <div class="col">E-mail</div>
+                    <div class="col">generalservices@santaclara.eu</div>
+                </div>
             </div>
-            <!-- End Check availability -->
         </section>
 
         <section class="row"></section>

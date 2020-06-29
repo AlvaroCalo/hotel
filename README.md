@@ -22,6 +22,26 @@ For the Back-End I've used:
 * Add favicon (Added, pending to check)
 
 
+### FRONT-END - Data loaded from database
+
+* rooms.php
+    * Loads a table with the rooms available, data retrieved from database
+
+* Index
+* Location
+* Guest rooms
+* Services
+* Menu
+* San Sebastian
+* Book a room
+ 
+
+### Database
+## Tables
+* users: id, username, password, email, tel, streetName, postalCode, city, country
+* rooms: id, roomName, description, free, ocupied
+* reservations: id, roomId, userId, arrival, departure
+
 
 ### BACK-END
 
