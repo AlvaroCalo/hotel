@@ -1,3 +1,7 @@
+<?php
+require_once("../phpfiles/functions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en-UK">
 
@@ -17,6 +21,10 @@
 </head>
 
 <body>
+
+    <?php
+    loadNavbar();
+    ?>
 
     <h3>Applies to different pages</h3>
 
@@ -101,6 +109,10 @@
 
 
     <a href="https://unsplash.com/license" target="_blank">Unsplash license</a>
+
+    <?php
+    loadFooter();
+    ?>
 </body>
 
 </html>
