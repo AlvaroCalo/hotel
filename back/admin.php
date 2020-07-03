@@ -85,20 +85,22 @@ if (mysqli_connect_errno()) {
                                             <button type="submit" id="btnView<?= $id; ?>" name="btnView" class="btn btn-info">View</button>
                                         </form>
                                     </td>
-                                    <td><button onclick="borrame(this.id);" type="button" id="btnBorrar<?= $id; ?>" name="btnBorrar" class="btn btn-danger">Delete</button></td>
                                     <td>
-                                    <form action="updateUSER.php" method="POST">
-                                        <input type="hidden" id="txtId" name="txtId" value="<?= $id; ?>" />
-                                        <input type="hidden" id="txtPass" name="txtPass" value="<?= $password; ?>" />
-                                        <input type="hidden" id="txtEmail" name="txtEmail" value="<?= $email; ?>" />
-                                        <input type="hidden" id="txtTel" name="txtTel" value="<?= $tel; ?>" />
-                                        <input type="hidden" id="txtStreet" name="txtStreet" value="<?= $streetName; ?>" />
-                                        <input type="hidden" id="txtPostalCode" name="txtPostalCode" value="<?= $postalCode; ?>" />
-                                        <input type="hidden" id="txtCity" name="txtCity" value="<?= $city; ?>" />
-                                        <input type="hidden" id="txtCountry" name="txtCountry" value="<?= $country; ?>" />
-                                        <input type="hidden" id="txtRol" name="txtRol" value="<?= $rol; ?>" />
-                                        <button type="submit" id="btnEditar<?= $id; ?>" name="btnEdit" class="btn btn-warning">Update</button>
-                                    </form>
+                                        <button onclick="borrame(this.id);" type="button" id="btnBorrar<?= $id; ?>" name="btnBorrar" class="btn btn-danger">Delete</button>
+                                    </td>
+                                    <td>
+                                        <form action="updateUSER.php" method="POST">
+                                            <input type="hidden" id="txtId" name="txtId" value="<?= $id; ?>" />
+                                            <input type="hidden" id="txtPass" name="txtPass" value="<?= $password; ?>" />
+                                            <input type="hidden" id="txtEmail" name="txtEmail" value="<?= $email; ?>" />
+                                            <input type="hidden" id="txtTel" name="txtTel" value="<?= $tel; ?>" />
+                                            <input type="hidden" id="txtStreet" name="txtStreet" value="<?= $streetName; ?>" />
+                                            <input type="hidden" id="txtPostalCode" name="txtPostalCode" value="<?= $postalCode; ?>" />
+                                            <input type="hidden" id="txtCity" name="txtCity" value="<?= $city; ?>" />
+                                            <input type="hidden" id="txtCountry" name="txtCountry" value="<?= $country; ?>" />
+                                            <input type="hidden" id="txtRol" name="txtRol" value="<?= $rol; ?>" />
+                                            <button type="submit" id="btnEditar<?= $id; ?>" name="btnEdit" class="btn btn-warning">Update</button>
+                                        </form>
                                     </td>
                                 </tr>
                         <?php
@@ -144,8 +146,15 @@ if (mysqli_connect_errno()) {
                                     <td><?= $user; ?></td>
                                     <td><?= $arrival; ?></td>
                                     <td><?= $departure; ?></td>
-                                    <td><button class="btn btn-info">View</button></td>
-                                    <td><button class="btn btn-danger">Delete</button></td>
+                                    <td>
+                                        <form action="viewReservations.php" method="POST">
+                                            <input type="hidden" id="txtId" name="txtId" value="<?= $idr; ?>" />
+                                            <button type="submit" id="btnViewR<?= $id; ?>" name="btnViewR" class="btn btn-info">View</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <button onclick="borrameR(this.id);" type="button" id="btnBorrar<?= $id; ?>" name="btnBorrar" class="btn btn-danger">Delete</button>
+                                    </td>
                                     <td><button class="btn btn-warning">Update</button></td>
                                 </tr>
                         <?php
@@ -168,8 +177,8 @@ if (mysqli_connect_errno()) {
     <?php
     loadFooter();
     ?>
-<script>
-    function borrame(_id) {
+    <script>
+        function borrame(_id) {
             var _id = _id.substring(9);
             console.log(_id);
             alertify.confirm("Borrar registro", "¿Quieres borrar el registro?",
@@ -202,7 +211,41 @@ if (mysqli_connect_errno()) {
                 cancel: '¡NO!'
             });
         };
-</script>
+
+        function borrameR(_id) {
+            var _id = _id.substring(9);
+            console.log(_id);
+            alertify.confirm("Borrar registro", "¿Quieres borrar el registro?",
+                function() {
+                    $.ajax({
+                        url: 'deleteReservations.php',
+                        method: 'POST',
+                        //dataType: "html",
+                        data: {
+                            id: _id
+                        },
+                        success: function(html) {
+                            if (html == 1) {
+                                window.location.reload();
+                                //alertify.success('Registro borrado');
+                            } else {
+                                alertify
+                                    .alert("Ha ocurrido un error", "Algo ha salido mal, repite el proceso.", function() {}).set('label', 'Vale :(');
+                            }
+                        },
+                        error: function(error) {
+                            console.log("error!");
+                        }
+                    });
+                },
+                function() {
+                    alertify.error('Borrado cancelado');
+                }).set('labels', {
+                ok: 'Sí, bórralo.',
+                cancel: '¡NO!'
+            });
+        };
+    </script>
 </body>
 
 </html>
