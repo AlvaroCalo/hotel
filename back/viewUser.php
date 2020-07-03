@@ -96,11 +96,28 @@ if (mysqli_connect_errno()) {
             }
             ?>
         </table>
-        <fieldset class="text-center mb-5">
-        <a href="admin.php" class="btn btn-info m-1">Return</a>
-        <button class="btn btn-warning m-1">Update</button>
-        </fieldset>
-        
+        <div class="row text-center mb-5">
+            <div class="col">
+                <a href="admin.php" class="btn btn-info m-1">Return</a>
+            </div>
+            <div class="col">
+                <form action="updateUSER.php" method="POST">
+                    <input type="hidden" id="txtId" name="txtId" value="<?= $id; ?>" />
+                    <input type="hidden" id="txtPass" name="txtPass" value="<?= $password; ?>" />
+                    <input type="hidden" id="txtEmail" name="txtEmail" value="<?= $email; ?>" />
+                    <input type="hidden" id="txtTel" name="txtTel" value="<?= $tel; ?>" />
+                    <input type="hidden" id="txtStreet" name="txtStreet" value="<?= $streetName; ?>" />
+                    <input type="hidden" id="txtPostalCode" name="txtPostalCode" value="<?= $postalCode; ?>" />
+                    <input type="hidden" id="txtCity" name="txtCity" value="<?= $city; ?>" />
+                    <input type="hidden" id="txtCountry" name="txtCountry" value="<?= $country; ?>" />
+                    <input type="hidden" id="txtRol" name="txtRol" value="<?= $rol; ?>" />
+                    <button type="submit" id="btnEditar<?= $id; ?>" name="btnEdit" class="btn btn-warning">Update</button>
+                </form>
+            </div>
+
+
+        </div>
+
     </div>
     <?php
     //Paso 8: Liberar

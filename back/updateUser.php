@@ -10,90 +10,128 @@ if (isset($_POST['btnEdit'])) {
     $uPostal = $_POST['txtPostalCode'];
     $uCity = $_POST['txtCity'];
     $uCountry = $_POST['txtCountry'];
-    $arch = $_POST['txtRol'];
+    $uRol = $_POST['txtRol'];
 }
 ?>
 
 <?php
-$nombre = '';
-$tipo = '';
-$descripcion = '';
-$archivo = '';
-$precio = '';
-$rati = '';
+$mIdent = '';
+$mPass = '';
+$mEmail = '';
+$mTel = '';
+$mStreet = '';
+$mPostal = '';
+$mCity = '';
+$mCountry = '';
+$mRol = '';
 $error = '';
-function limpiarCadenas($cadena)  //no funciona, no me las limpia 
+function cleanChain($chain)
 {
-    $cadena = trim($cadena); //quita los espacios del principio y del final
-    $cadena = stripslashes($cadena); //quita contrabarras
-    $cadena = strip_tags($cadena, ""); //quita todas las etiquetas
-    return $cadena;
+    $chain = trim($chain);
+    $chain = stripslashes($chain);
+    $chain = strip_tags($chain, "");
+    return $chain;
 }
 
-function validaFormulario()
+function formVal()
 {
-    global $error, $nombre, $tipo, $descripcion, $archivo, $precio, $rati;
+    global $mIdent, $mPass, $mEmail, $mTel, $mStreet, $mPostal, $mCity, $mCountry, $mRol, $error;
     $valida = true;
     $error = '';
 
-    if (empty($_POST['txtNombre'])) {
+    if (empty($_POST['txtIdent'])) {
         $valida = false;
-        $error .= '<div class="alert alert-warning text-center" role="alert">El nombre no puede estar vacío</div>';
+        $error .= '<div class="alert alert-warning text-center" role="alert">Id empty, please fill it</div>';
     } else {
-        $prenombre = limpiarCadenas($_POST['txtNombre']);
-        $nombre = $prenombre;
+        $mIdent = cleanChain($_POST['txtIdent']);
     }
 
-    if (empty($_POST['txtDescripcion'])) {
+    if (empty($_POST['txtUemail'])) {
         $valida = false;
-        $error .= '<div class="alert alert-warning text-center" role="alert">La descripción no puede estar vacía</div>';
+        $error .= '<div class="alert alert-warning text-center" role="alert">Email empty, please fill it</div>';
     } else {
-        $descripcion = limpiarCadenas($_POST['txtDescripcion']);
+        $mEmail = cleanChain($_POST['txtUemail']);
     }
 
-    $tipo = $_POST['txtTipos'];
-
-    if (empty($_POST['txtPrecio'])) {
+    if (empty($_POST['txtUpass'])) {
         $valida = false;
-        $error .= '<div class="alert alert-warning text-center" role="alert">El precio no puede estar vacío</div>';
+        $error .= '<div class="alert alert-warning text-center" role="alert">Password empty, please fill it</div>';
     } else {
-        $precio = limpiarCadenas($_POST['txtPrecio']);
+        $mPass = cleanChain($_POST['txtUpass']);
     }
 
-    $rati = $_POST['rangeRating'];
+    if (empty($_POST['txtUtel'])) {
+        $valida = false;
+        $error .= '<div class="alert alert-warning text-center" role="alert">Phone empty, please fill it</div>';
+    } else {
+        $mTel = cleanChain($_POST['txtUtel']);
+    }
+
+    if (empty($_POST['txtUstreet'])) {
+        $valida = false;
+        $error .= '<div class="alert alert-warning text-center" role="alert">Street empty, please fill it</div>';
+    } else {
+        $mStreet = cleanChain($_POST['txtUstreet']);
+    }
+
+    if (empty($_POST['txtUpostal'])) {
+        $valida = false;
+        $error .= '<div class="alert alert-warning text-center" role="alert">Postal code empty, please fill it</div>';
+    } else {
+        $mPostal = cleanChain($_POST['txtUpostal']);
+    }
+
+    if (empty($_POST['txtUcity'])) {
+        $valida = false;
+        $error .= '<div class="alert alert-warning text-center" role="alert">City empty, please fill it</div>';
+    } else {
+        $mCity = cleanChain($_POST['txtUcity']);
+    }
+
+    if (empty($_POST['txtUcountry'])) {
+        $valida = false;
+        $error .= '<div class="alert alert-warning text-center" role="alert">Country empty, please fill it</div>';
+    } else {
+        $mCountry = cleanChain($_POST['txtUcountry']);
+    }
+
+    $mRol = $_POST['txtURol'];
 
     return $valida;
 }
 #Este es para editar el producto en la base de datos
-if (isset($_POST['btnEnviar'])) {
-    if (validaFormulario()) {
-        $ident = $_POST['txtIdent'];
-        $title = $_POST['txtNombre'];
-        $type = $_POST['txtTipos'];
-        $descrip = $_POST['txtDescripcion'];
-        $arch = $_POST['txtArchivo'];
-        $price = $_POST['txtPrecio'];
-        $rating = $_POST['rangeRating'];
-        $typeNum = traduceTipos($type);
+if (isset($_POST['btnSend'])) {
+    if (formVal()) {
+        $uIdent = $_POST['txtIdent'];
+        $uPass = $_POST['txtUpass'];
+        $uEmail = $_POST['txtUemail'];
+        $uTel = $_POST['txtUtel'];
+        $uStreet = $_POST['txtUstreet'];
+        $uPostal = $_POST['txtUpostal'];
+        $uCity = $_POST['txtUcity'];
+        $uCountry = $_POST['txtUcountry'];
+        $uRol = $_POST['txtURol'];
 
         # The database variables
-        include_once '../conexion.php';
+        include_once '../phpfiles/conexion.php';
         # Connection to the data base
-        $conn = mysqli_connect($host, $usuario, $password, $db);
+        $conn = mysqli_connect($host, $user, $password, $db);
         # Preparing the sentence with ?
-        $sql = "UPDATE productos SET nombrep = ?, tipop = ?, descrip = ?, archivop = ?, preciop = ?, ratingp = ? WHERE id = ?";
-        # The data to update
-        $titleU = $title;
-        $typeU = $typeNum;
-        $descripU = $descrip;
-        $filU = $arch;
-        $priceU = $price;
-        $ratingU = $rating;
-        $ide = $ident;
+        $sql = "UPDATE users SET PASSWORD = ?, email = ?, tel = ?, streetName = ?, postalCode = ?, city = ?, country = ?, rol = ? WHERE id = ?";
+        # Aux var neede to proper form load in the submit process
+        $kPass = $uPass;
+        $kEmail = $uEmail;
+        $kTel = $uTel;
+        $kStreet = $uStreet;
+        $kPostal = $uPostal;
+        $kCity = $uCity;
+        $kCountry = $uCountry;
+        $kRol = $uRol;
+        $kIdent = $uIdent;
         # Preparing the query
         $pre = mysqli_prepare($conn, $sql);
         # the data to update and the type
-        mysqli_stmt_bind_param($pre, "sissdii", $titleU, $typeU, $descripU, $filU, $priceU, $ratingU, $ide);
+        mysqli_stmt_bind_param($pre, "ssisisssi", $kPass, $kEmail, $kTel, $kStreet, $kPostal, $kCity, $kCountry, $kRol, $kIdent);
         # Ejecuto la consulta
         mysqli_stmt_execute($pre);
         # Cierro la consulta y la conexión
@@ -119,7 +157,7 @@ if (isset($_POST['btnEnviar'])) {
 <html lang="es-ES">
 
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <title>Hilbert Hotel - Edit user</title>
     <!-- metas -->
     <meta name="description" content="Hotel WebApp Proyect" />
@@ -146,56 +184,56 @@ if (isset($_POST['btnEnviar'])) {
 
                     <div class="form-group">
                         <label for="txtUemail">User email:
-                            <input type="text" class="form-control" id="txtUemail" name="txtUemail" value="<?= $uEmail ?>">
+                            <input type="text" class="form-control" id="txtUemail" name="txtUemail" value="<?= $uEmail ?>" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUpass">User password:
-                            <input type="text" class="form-control" id="txtUpass" name="txtUpass" value="<?= $uPass ?>">
+                            <input type="text" class="form-control" id="txtUpass" name="txtUpass" value="<?= $uPass ?>" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUtel">User phone:
-                            <input type="text" class="form-control" id="txtUtel" name="txtUtel" value="<?= $uTel ?>">
+                            <input type="text" class="form-control" id="txtUtel" name="txtUtel" value="<?= $uTel ?>" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUstreet">User street:
-                            <input type="text" class="form-control" id="txtUstreet" name="txtUstreet" value="<?= $uStreet ?>">
+                            <input type="text" class="form-control" id="txtUstreet" name="txtUstreet" value="<?= $uStreet ?>" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUpostal">User postal code:
-                            <input type="text" class="form-control" id="txtUpostal" name="txtUpostal" value="<?= $uPostal ?>">
+                            <input type="text" class="form-control" id="txtUpostal" name="txtUpostal" value="<?= $uPostal ?>" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUcity">User city:
-                            <input type="text" class="form-control" id="txtUcity" name="txtUcity" value="<?= $uCity ?>">
+                            <input type="text" class="form-control" id="txtUcity" name="txtUcity" value="<?= $uCity ?>" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUcountry">User country:
-                            <input type="text" class="form-control" id="txtUcountry" name="txtUcountry" value="<?= $uCountry ?>">
+                            <input type="text" class="form-control" id="txtUcountry" name="txtUcountry" value="<?= $uCountry ?>" required />
                         </label>
                     </div>
 
-<!--                     <div class="form-group">
-                        <label for="txtTipos">Select rol</label>
-                        <select id="txtTipos" name="txtTipos" class="custom-select">
-                             cargo los options con llamada ajax
+                    <div class="form-group">
+                        <label for="txtURol">Select rol</label>
+                        <select id="txtURol" name="txtURol" class="custom-select">
+                            <!-- Options loaded with JQuery -->
                         </select>
-                    </div> -->
+                    </div>
 
-                    <button type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-primary mb-3" onclick="validarFormulario()">Modificar producto</button>
+                    <button type="submit" id="btnSend" name="btnSend" class="btn btn-primary mb-3">Modify user</button>
 
-                    <a href="productos.php" id="btnVProductos" name="btnVProductos" class="btn btn-primary mb-3">Volver a productos</a>
+                    <a href="admin.php" id="btnAdmin" name="btnAdmin" class="btn btn-primary mb-3">Back to admin panel</a>
                 </form>
             </div>
         </div>
@@ -205,58 +243,24 @@ if (isset($_POST['btnEnviar'])) {
     <script>
         $(document).ready(function() {
             console.log("ready!");
-            // with this changes the selected option when the page is loaded and the user changes it for submmiting the form
-/*             $("#txtTipos").change(function() {
-                $("#txtTipos option:selected").attr("selected", true).siblings().removeAttr("selected");
-            }); */
-        });
 
-/*         var opcion = "";
-        $.ajax({ // loads the type
-            url: '../tipos.php',
-            method: 'GET',
-            dataType: "json",
-            data: {},
-            success: function(data) {
-                $.each(data, function(i, v) {
-                    if (v.nombre == <?php echo json_encode($type); ?>) {
-                        opcion += '<option value="' + v.nombre + '" selected>' + v.nombre.charAt(0).toUpperCase() + v.nombre.slice(1) + '</option>';
-                    } else {
-                        opcion += '<option value="' + v.nombre + '">' + v.nombre.charAt(0).toUpperCase() + v.nombre.slice(1) + '</option>';
-                    }
-                });
-                $("#txtTipos").html(opcion);
-            },
-            error: function(error) {
-                console.log("error!");
-            }
-        }); */
-
-        function validarFormulario() { // he probado la función y va bien, acordarse de CAMBIARRRRRRR el onclick cuando vaya a produccion!!!
-
-            var resultado = true;
-            if ($("#txtNombre").val() == "") {
-                resultado = false;
-            }
-
-            if ($("#txtTipos").val() == "0") {
-                resultado = false;
-            }
-
-            if ($("#txtDescripcion").val() == "") {
-                resultado = false;
-            }
-            if ($("#txtPrecio").val() == "") {
-                resultado = false;
-            };
-
-            if (resultado) {
-                return true;
+            var opcion = "";
+            if ('<?= $uRol  ?>' == 'admin') {
+                opcion += '<option value="' + '<?= $uRol  ?>' + '" selected>' + '<?= $uRol  ?>'.charAt(0).toUpperCase() + '<?= $uRol  ?>'.slice(1) + '</option>';
+                opcion += '<option value="client">Client</option>';
             } else {
-                event.preventDefault();
-                return false;
-            };
-        }
+                opcion += '<option value="admin">Admin</option>';
+                opcion += '<option value="client" selected>Client</option>';
+            }
+            $("#txtURol").append(opcion);
+            // console.log(opcion);
+
+            // with this changes the selected option when the page is loaded and the user changes it for submmiting the form
+            $("#txtURol").change(function() {
+                $("#txtURol option:selected").attr("selected", true).siblings().removeAttr("selected");
+            });
+
+        });
     </script>
 </body>
 
