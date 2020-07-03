@@ -47,7 +47,7 @@ For the Back-End I've used:
 * el login con sesión, si es admin ve una cosa y si es regular ve otra
     * si es admin
         * Lista de clientes (ve los perfiles y sus reservas)
-            * Editar clientes, añadir y borrar
+            * Ver (añadir en la página el editar), editar, añadir y borrar
         * Reservas
             * Ver y editar reservas
     * si es regular
