@@ -49,7 +49,7 @@ For the Back-End I've used:
         * Lista de clientes (ve los perfiles y sus reservas)
             * Ver, editar, añadir y borrar
         * Reservas
-            * Ver, eliminar y editar reservas
+            * Ver, eliminar, añadir, editar reservas
     * si es regular
         * Perfil
             * Ver y modificar

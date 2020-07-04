@@ -1,21 +1,8 @@
 <?php
 include_once '../phpfiles/functions.php';
-#Aquí viene el get de la página productos.php 
-if (isset($_POST['btnEdit'])) {
-    $ident = $_POST['txtId'];
-    $uPass = $_POST['txtPass'];
-    $uEmail = $_POST['txtEmail'];
-    $uTel = $_POST['txtTel'];
-    $uStreet = $_POST['txtStreet'];
-    $uPostal = $_POST['txtPostalCode'];
-    $uCity = $_POST['txtCity'];
-    $uCountry = $_POST['txtCountry'];
-    $uRol = $_POST['txtRol'];
-}
 ?>
 
 <?php
-$mIdent = '';
 $mPass = '';
 $mEmail = '';
 $mTel = '';
@@ -38,13 +25,6 @@ function formVal()
     global $mIdent, $mPass, $mEmail, $mTel, $mStreet, $mPostal, $mCity, $mCountry, $mRol, $error;
     $valida = true;
     $error = '';
-
-    if (empty($_POST['txtIdent'])) {
-        $valida = false;
-        $error .= '<div class="alert alert-warning text-center" role="alert">Id empty, please fill it</div>';
-    } else {
-        $mIdent = cleanChain($_POST['txtIdent']);
-    }
 
     if (empty($_POST['txtUemail'])) {
         $valida = false;
@@ -102,7 +82,6 @@ function formVal()
 #Este es para editar el producto en la base de datos
 if (isset($_POST['btnSend'])) {
     if (formVal()) {
-/*         $uIdent = $_POST['txtIdent'];
         $uPass = $_POST['txtUpass'];
         $uEmail = $_POST['txtUemail'];
         $uTel = $_POST['txtUtel'];
@@ -110,14 +89,15 @@ if (isset($_POST['btnSend'])) {
         $uPostal = $_POST['txtUpostal'];
         $uCity = $_POST['txtUcity'];
         $uCountry = $_POST['txtUcountry'];
-        $uRol = $_POST['txtURol']; */
+        $uRol = $_POST['txtURol']; 
 
         # The database variables
         include_once '../phpfiles/conexion.php';
         # Connection to the data base
         $conn = mysqli_connect($host, $user, $password, $db);
         # Preparing the sentence with ?
-        $sql = "UPDATE users SET PASSWORD = ?, email = ?, tel = ?, streetName = ?, postalCode = ?, city = ?, country = ?, rol = ? WHERE id = ?";
+        $sql = "INSERT INTO users (PASSWORD, email, tel, streetName, postalCode, city, country, rol)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         # Aux var neede to proper form load in the submit process
         $uPass = $mPass;
         $uEmail = $mEmail;
@@ -131,7 +111,7 @@ if (isset($_POST['btnSend'])) {
         # Preparing the query
         $pre = mysqli_prepare($conn, $sql);
         # the data to update and the type
-        mysqli_stmt_bind_param($pre, "ssisisssi", $uPass, $uEmail, $uTel, $uStreet, $uPostal, $uCity, $uCountry, $uRol, $uIdent);
+        mysqli_stmt_bind_param($pre, "ssssisss", $uPass, $uEmail, $uTel, $uStreet, $uPostal, $uCity, $uCountry, $uRol);
         # Ejecuto la consulta
         mysqli_stmt_execute($pre);
         # Cierro la consulta y la conexión
@@ -141,7 +121,7 @@ if (isset($_POST['btnSend'])) {
         <div class="row mb-3 mt-3">
             <div class="col">
                 <div class="alert alert-warning text-center" role="alert">
-                    User correctly modified.
+                    User correctly added.
                 </div>
             </div>
         </div>
@@ -158,7 +138,7 @@ if (isset($_POST['btnSend'])) {
 
 <head>
     <meta charset="utf-8" />
-    <title>Hilbert Hotel - Edit user</title>
+    <title>Hilbert Hotel - Add user</title>
     <!-- metas -->
     <meta name="description" content="Hotel WebApp Proyect" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -175,63 +155,63 @@ if (isset($_POST['btnSend'])) {
 
 <body>
     <div class="container centrate">
-        <h1 class="text-center">Update user</h1>
+        <h1 class="text-center">Add user</h1>
         <div class="row justify-content-center align-items-center">
             <div class="col">
 
                 <form action="<?php $_PHP_SELF ?>" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" id="txtIdent" name="txtIdent" value="<?= $ident; ?>" />
 
                     <div class="form-group">
                         <label for="txtUemail">User email:
-                            <input type="text" class="form-control" id="txtUemail" name="txtUemail" value="<?= $uEmail ?>" required />
+                            <input type="text" class="form-control" id="txtUemail" name="txtUemail" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUpass">User password:
-                            <input type="text" class="form-control" id="txtUpass" name="txtUpass" value="<?= $uPass ?>" required />
+                            <input type="text" class="form-control" id="txtUpass" name="txtUpass" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUtel">User phone:
-                            <input type="text" class="form-control" id="txtUtel" name="txtUtel" value="<?= $uTel ?>" required />
+                            <input type="text" class="form-control" id="txtUtel" name="txtUtel" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUstreet">User street:
-                            <input type="text" class="form-control" id="txtUstreet" name="txtUstreet" value="<?= $uStreet ?>" required />
+                            <input type="text" class="form-control" id="txtUstreet" name="txtUstreet" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUpostal">User postal code:
-                            <input type="text" class="form-control" id="txtUpostal" name="txtUpostal" value="<?= $uPostal ?>" required />
+                            <input type="text" class="form-control" id="txtUpostal" name="txtUpostal" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUcity">User city:
-                            <input type="text" class="form-control" id="txtUcity" name="txtUcity" value="<?= $uCity ?>" required />
+                            <input type="text" class="form-control" id="txtUcity" name="txtUcity" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtUcountry">User country:
-                            <input type="text" class="form-control" id="txtUcountry" name="txtUcountry" value="<?= $uCountry ?>" required />
+                            <input type="text" class="form-control" id="txtUcountry" name="txtUcountry" required />
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="txtURol">Select rol</label>
                         <select id="txtURol" name="txtURol" class="custom-select">
-                            <!-- Options loaded with JQuery -->
+                            <option value="client">Client</option>
+                            <option value="admin">Admin</option>
                         </select>
                     </div>
 
-                    <button type="submit" id="btnSend" name="btnSend" class="btn btn-primary mb-3">Modify user</button>
+                    <button type="submit" id="btnSend" name="btnSend" class="btn btn-primary mb-3">Add user</button>
 
                     <a href="admin.php" id="btnAdmin" name="btnAdmin" class="btn btn-primary mb-3">Back to admin panel</a>
                 </form>
@@ -244,16 +224,6 @@ if (isset($_POST['btnSend'])) {
         $(document).ready(function() {
             console.log("ready!");
 
-            var opcion = "";
-            if ('<?= $uRol  ?>' == 'admin') {
-                opcion += '<option value="' + '<?= $uRol  ?>' + '" selected>' + '<?= $uRol  ?>'.charAt(0).toUpperCase() + '<?= $uRol  ?>'.slice(1) + '</option>';
-                opcion += '<option value="client">Client</option>';
-            } else {
-                opcion += '<option value="admin">Admin</option>';
-                opcion += '<option value="client" selected>Client</option>';
-            }
-            $("#txtURol").append(opcion);
-            // console.log(opcion);
 
             // with this changes the selected option when the page is loaded and the user changes it for submmiting the form
             $("#txtURol").change(function() {

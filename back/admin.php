@@ -48,7 +48,7 @@ if (mysqli_connect_errno()) {
         <main class="container-fluid">
             <section class="row">
                 <div class="col">
-                    <h3 id="clientList" class="text-center">Clients list<span><a class="btn" href="" >Add client</a></span></h3>
+                    <h3 id="clientList" class="text-center">Clients list<span><a class="btn" href="addUser.php" >Add client</a></span></h3>
                     <table class="table">
                         <tr>
                             <th>Id</th>
@@ -111,7 +111,7 @@ if (mysqli_connect_errno()) {
                     </table>
                 </div>
                 <div class="col">
-                    <h3 id="reservationList" class="text-center">Reservations list <span><a class="btn" href="" >Add reservation</a></span> </h3>
+                    <h3 id="reservationList" class="text-center">Reservations list <span><a class="btn" href="addReservations.php">Add reservation</a></span> </h3>
                     <table class="table">
                         <tr>
                             <th>Id</th>
