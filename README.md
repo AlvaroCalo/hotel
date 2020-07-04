@@ -47,9 +47,9 @@ For the Back-End I've used:
 * el login con sesión, si es admin ve una cosa y si es regular ve otra
     * si es admin
         * Lista de clientes (ve los perfiles y sus reservas)
-            * Ver (añadir en la página el editar), editar, añadir y borrar
+            * Ver, editar, añadir y borrar
         * Reservas
-            * Ver y editar reservas
+            * Ver, eliminar y editar reservas
     * si es regular
         * Perfil
             * Ver y modificar
@@ -58,7 +58,7 @@ For the Back-End I've used:
             * Anular reservas
 * sign in 
     * solo usuarios
-CAMBIAR EL LOGOTIPO
+cambiar la navbar del admin
 ### BACK-END
 
 * Admin-Manager (with custom views): 

@@ -48,7 +48,7 @@ if (mysqli_connect_errno()) {
         <main class="container-fluid">
             <section class="row">
                 <div class="col">
-                    <h3 id="clientList" class="text-center">Clients list</h3>
+                    <h3 id="clientList" class="text-center">Clients list<span><a class="btn" href="" >Add client</a></span></h3>
                     <table class="table">
                         <tr>
                             <th>Id</th>
@@ -111,7 +111,7 @@ if (mysqli_connect_errno()) {
                     </table>
                 </div>
                 <div class="col">
-                    <h3 id="reservationList" class="text-center">Reservations list</h3>
+                    <h3 id="reservationList" class="text-center">Reservations list <span><a class="btn" href="" >Add reservation</a></span> </h3>
                     <table class="table">
                         <tr>
                             <th>Id</th>
@@ -127,7 +127,8 @@ if (mysqli_connect_errno()) {
                         $sql = "SELECT reservations.id, rooms.roomName, users.email, reservations.arrival, reservations.departure
                                 FROM reservations
                                 JOIN users ON users.id = reservations.userId
-                                JOIN rooms ON rooms.id = reservations.roomId";
+                                JOIN rooms ON rooms.id = reservations.roomId
+                                ORDER BY reservations.id";
                         //4.1 preparar la sentencia
                         $pre = mysqli_prepare($conexion, $sql);
                         if ($pre) {
@@ -149,13 +150,22 @@ if (mysqli_connect_errno()) {
                                     <td>
                                         <form action="viewReservations.php" method="POST">
                                             <input type="hidden" id="txtId" name="txtId" value="<?= $idr; ?>" />
-                                            <button type="submit" id="btnViewR<?= $id; ?>" name="btnViewR" class="btn btn-info">View</button>
+                                            <button type="submit" id="btnViewR<?= $idr; ?>" name="btnViewR" class="btn btn-info">View</button>
                                         </form>
                                     </td>
                                     <td>
-                                        <button onclick="borrameR(this.id);" type="button" id="btnBorrar<?= $id; ?>" name="btnBorrar" class="btn btn-danger">Delete</button>
+                                        <button onclick="borrameR(this.id);" type="button" id="btnDelete<?= $idr; ?>" name="btnDelete" class="btn btn-danger">Delete</button>
                                     </td>
-                                    <td><button class="btn btn-warning">Update</button></td>
+                                    <td>
+                                        <form action="updateReservations.php" method="POST">
+                                            <input type="hidden" id="txtIdr" name="txtIdr" value="<?= $idr; ?>" />
+                                            <input type="hidden" id="txtRoom" name="txtRoom" value="<?= $roomName; ?>" />
+                                            <input type="hidden" id="txtUser" name="txtUser" value="<?= $user; ?>" />
+                                            <input type="hidden" id="txtArrival" name="txtArrival" value="<?= $arrival; ?>" />
+                                            <input type="hidden" id="txtDeparture" name="txtDeparture" value="<?= $departure; ?>" />
+                                            <button type="submit" id="btnUpdate<?= $id; ?>" name="btnUpdate" class="btn btn-warning">Update</button>
+                                        </form>
+                                    </td>
                                 </tr>
                         <?php
                             }

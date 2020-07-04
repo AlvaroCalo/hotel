@@ -38,6 +38,7 @@ if (mysqli_connect_errno()) {
 
     <?php
     loadNavbar();
+    // echo $_POST['txtId'];
     ?>
 
     <div class="container">
@@ -45,8 +46,8 @@ if (mysqli_connect_errno()) {
             <?php
             $sql = "SELECT reservations.id, rooms.roomName, users.email, reservations.arrival, reservations.departure 
             FROM reservations
-            JOIN rooms ON rooms.id = reservations.id
-            JOIN users ON users.id = reservations.id
+            JOIN rooms ON rooms.id = reservations.roomId
+            JOIN users ON users.id = reservations.userId
             WHERE reservations.id = ?";
             $pre = mysqli_prepare($conexion, $sql);
             if ($pre) {

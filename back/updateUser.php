@@ -102,7 +102,7 @@ function formVal()
 #Este es para editar el producto en la base de datos
 if (isset($_POST['btnSend'])) {
     if (formVal()) {
-        $uIdent = $_POST['txtIdent'];
+/*         $uIdent = $_POST['txtIdent'];
         $uPass = $_POST['txtUpass'];
         $uEmail = $_POST['txtUemail'];
         $uTel = $_POST['txtUtel'];
@@ -110,7 +110,7 @@ if (isset($_POST['btnSend'])) {
         $uPostal = $_POST['txtUpostal'];
         $uCity = $_POST['txtUcity'];
         $uCountry = $_POST['txtUcountry'];
-        $uRol = $_POST['txtURol'];
+        $uRol = $_POST['txtURol']; */
 
         # The database variables
         include_once '../phpfiles/conexion.php';
@@ -119,15 +119,15 @@ if (isset($_POST['btnSend'])) {
         # Preparing the sentence with ?
         $sql = "UPDATE users SET PASSWORD = ?, email = ?, tel = ?, streetName = ?, postalCode = ?, city = ?, country = ?, rol = ? WHERE id = ?";
         # Aux var neede to proper form load in the submit process
-        $kPass = $uPass;
-        $kEmail = $uEmail;
-        $kTel = $uTel;
-        $kStreet = $uStreet;
-        $kPostal = $uPostal;
-        $kCity = $uCity;
-        $kCountry = $uCountry;
-        $kRol = $uRol;
-        $kIdent = $uIdent;
+        $uPass = $mPass;
+        $uEmail = $mEmail;
+        $uTel = $mTel;
+        $uStreet = $mStreet;
+        $uPostal = $mPostal;
+        $uCity = $mCity;
+        $uCountry = $mCountry;
+        $uRol = $mRol;
+        $uIdent = $mIdent;
         # Preparing the query
         $pre = mysqli_prepare($conn, $sql);
         # the data to update and the type

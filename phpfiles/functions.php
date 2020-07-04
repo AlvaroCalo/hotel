@@ -112,3 +112,71 @@ function doLogin()
     }
 }
 ?>
+
+<?php
+function giveReservedRoomId($id)
+{
+    global $host, $user, $password, $db;
+    # Conectarse a la base de datos
+    $connT = mysqli_connect($host, $user, $password, $db);
+    #Tengo que hacer una select para sacar los id de los tipos
+    //Paso 3: Comprobar si conecta
+    if (mysqli_connect_errno()) {
+        echo 'Error al conectar con la base de datos';
+        exit(); //die()
+    }
+    $sqlT = "SELECT roomId FROM reservations WHERE id = ?";
+    $preT = mysqli_prepare($connT, $sqlT);
+    mysqli_stmt_bind_param($preT, "i", $id);
+    mysqli_stmt_execute($preT);
+    mysqli_stmt_bind_result($preT, $roomId);
+
+    while (mysqli_stmt_fetch($preT)) {
+        $devuelve = $roomId;
+    }
+    json_encode($devuelve);
+
+    //Paso 8: Liberar
+    mysqli_stmt_close(($preT));
+
+    //Paso 9: Cerrar la conexión
+    mysqli_close($connT);
+
+    return $devuelve;
+
+}
+?>
+
+<?php
+function giveReservedUSerId($id)
+{
+    global $host, $user, $password, $db;
+    # Conectarse a la base de datos
+    $connT = mysqli_connect($host, $user, $password, $db);
+    #Tengo que hacer una select para sacar los id de los tipos
+    //Paso 3: Comprobar si conecta
+    if (mysqli_connect_errno()) {
+        echo 'Error al conectar con la base de datos';
+        exit(); //die()
+    }
+    $sqlT = "SELECT userId FROM reservations WHERE id = ?";
+    $preT = mysqli_prepare($connT, $sqlT);
+    mysqli_stmt_bind_param($preT, "i", $id);
+    mysqli_stmt_execute($preT);
+    mysqli_stmt_bind_result($preT, $userId);
+
+    while (mysqli_stmt_fetch($preT)) {
+        $devuelve = $userId;
+    }
+    json_encode($devuelve);
+
+    //Paso 8: Liberar
+    mysqli_stmt_close(($preT));
+
+    //Paso 9: Cerrar la conexión
+    mysqli_close($connT);
+
+    return $devuelve;
+
+}
+?>
