@@ -67,7 +67,7 @@ if ( isset($_POST['btnSubmit']) ) {
     ?>
 
     <main class="container">
-        <section class="row text-center m-5">
+        <section class="row h-100 text-center m-5">
             <div class="col-6" id="login">
                 <h4>Log in</h4>
                 <form action="<?php $_PHP_SELF ?>" method="POST">
@@ -82,20 +82,13 @@ if ( isset($_POST['btnSubmit']) ) {
                     <button type="submit" name="btnSubmit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-            <div class="col-6" id="sign-in">
-                <h4>Sign in</h4>
-                <form>
-                    <div class="form-group">
-                        <label for="txtEmailS">Email address</label>
-                        <input type="email" class="form-control" id="txtEmailS" name="txtEmailS">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPasswordS">Password</label>
-                        <input type="password" class="form-control" id="txtPasswordS" name="txtPasswordS">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+
+            <div class="col-6 my-auto">
+                <p>If you are already our client you can log in with your e-mail and password.</p>
+                <p>If you had never been in our hotel, please sign up and book a romm</p>
+                <a href="signin.php" class="btn btn-info">Sign in</a>
             </div>
+
         </section>
     </main>
 
@@ -122,22 +115,7 @@ if ( isset($_POST['btnSubmit']) ) {
             $("#txtPasswordL").blur(function() {
                 $("#txtPasswordL").removeClass("colorea");
             });
-            // following 4 changes the color of the focused text input field SIGNIN
-            $("#txtEmailS").focus(function() {
-                $("#txtEmailS").addClass("colorea");
-            });
 
-            $("#txtEmailS").blur(function() {
-                $("#txtEmailS").removeClass("colorea");
-            });
-
-            $("#txtPasswordS").focus(function() {
-                $("#txtPasswordS").addClass("colorea");
-            });
-
-            $("#txtPasswordS").blur(function() {
-                $("#txtPasswordS").removeClass("colorea");
-            });
 
         });
     </script>

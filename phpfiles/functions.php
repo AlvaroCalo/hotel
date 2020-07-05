@@ -102,7 +102,7 @@ function doLogin()
     // If result matched $myusername and $mypassword, table row must be 1 row
 
     if ($count == 1) {
-        header("location: ../back/index.php");
+        header("location: ../back/admin.php");
     } else {
 ?>
         <div class="alert alert-danger" role="alert">
@@ -143,7 +143,6 @@ function giveReservedRoomId($id)
     mysqli_close($connT);
 
     return $devuelve;
-
 }
 ?>
 
@@ -177,6 +176,65 @@ function giveReservedUSerId($id)
     mysqli_close($connT);
 
     return $devuelve;
+}
+?>
 
+<?php
+function checkUser($userCheck)
+{
+    global $host, $user, $password, $db;
+    # Conectarse a la base de datos
+    $connT = mysqli_connect($host, $user, $password, $db);
+    #Tengo que hacer una select para sacar los id de los tipos
+    $devuelve = '';
+    //Paso 3: Comprobar si conecta
+    if (mysqli_connect_errno()) {
+        echo 'Error al conectar con la base de datos';
+        exit(); //die()
+    }
+    $sqlT = "SELECT email FROM users WHERE email = ?";
+    $preT = mysqli_prepare($connT, $sqlT);
+    mysqli_stmt_bind_param($preT, "s", $userCheck);
+    mysqli_stmt_execute($preT);
+    mysqli_stmt_bind_result($preT, $userMail);
+
+    if (mysqli_stmt_fetch($preT) == 1) {
+        return true;
+    } else {
+        return false;
+    }
+    //Paso 8: Liberar
+    mysqli_stmt_close(($preT));
+
+    //Paso 9: Cerrar la conexión
+    mysqli_close($connT);
+
+    return $devuelve;
+}
+?>
+
+<?php
+function addUser($userMail, $userPassword, $userPhone, $userStreet, $userPostal, $userCity, $userCountry)
+{
+    global $host, $user, $password, $db;
+    # Conectarse a la base de datos
+    $conn = mysqli_connect($host, $user, $password, $db);
+    # Preparo la sentencia con los comodines ?
+    $sql = "INSERT INTO users (password, email, tel, streetName, postalCode, city, country, rol) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    # Preparo los datos que voy a insertar
+    $rol = 'client';
+    # Preparo la consulta
+    $pre = mysqli_prepare($conn, $sql);
+    # indico los datos a reemplazar con su tipo
+    mysqli_stmt_bind_param($pre, "ssisisss", $userPassword, $userMail, $userPhone, $userStreet, $userPostal, $userCity, $userCountry, $rol);
+    # Ejecuto la consulta
+    mysqli_stmt_execute($pre);
+    # PASO OPCIONAL (SOLO PARA CONSULTAS DE INSERCIÓN):
+    # Obtener el ID del registro insertado
+    $nuevo_id = mysqli_insert_id($conn);
+    # Cierro la consulta y la conexión
+    mysqli_stmt_close($pre);
+    mysqli_close($conn);
 }
 ?>
