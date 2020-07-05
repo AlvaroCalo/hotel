@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+if(!isset($_SESSION['loggedin'])){
+	header('Location: ../front/reservation.php');
+} elseif ($_SESSION['rol'] == 'client') {
+    header('Location: ../back/clientL.php');
+}
+
 require_once("../phpfiles/functions.php");
 
 require_once('../phpfiles/conexion.php');

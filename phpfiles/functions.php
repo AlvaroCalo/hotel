@@ -81,6 +81,8 @@ function loadFooter()
 <?php
 function doLogin()
 {
+
+    session_start();
     global $host, $user, $password, $db, $conexion;
     // me conecto a la bd
     $conexion = mysqli_connect($host, $user, $password, $db);
@@ -93,16 +95,47 @@ function doLogin()
     $myusername = mysqli_real_escape_string($conexion, $_POST['txtEmailL']);
     $mypassword = mysqli_real_escape_string($conexion, $_POST['txtPasswordL']);
 
-    $sql = "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword'";
+    $sql = "SELECT id, rol FROM users WHERE email = ? and password = ? ";
 
-    $pre = mysqli_query($conexion, $sql);
+    # Preparo la consulta
+    $pre = mysqli_prepare($conexion, $sql);
+    # indico los datos a reemplazar con su tipo
+    mysqli_stmt_bind_param($pre, "ss", $myusername, $mypassword);
+    # Ejecuto la consulta
+    mysqli_stmt_execute($pre);
+    # asocio los nombres de campo a nombres de variables
+    mysqli_stmt_bind_result($pre, $id, $rol);
+    # Capturo los resultados y los guardo en un array
+    $registros[] = null;
+    while (mysqli_stmt_fetch($pre)) {
+        $registros = array(
+            'user' => $id,
+            'rol' => $rol
+        );
+    }
 
-    $count = mysqli_num_rows($pre);
+    if ($registros != null) {
+        $_SESSION['loggedin'] = true;
+        if ($registros['rol'] == 'admin') {
+            $_SESSION['rol'] = 'admin';
+            $_SESSION['user'] = $registros['user'];
+        } else {
+            $_SESSION['rol'] = 'client';
+            $_SESSION['user'] = $registros['user'];
+        }
+        // header('Location:index.php');
+    }
+
+
+    $sql2 = "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword'";
+
+    $preT = mysqli_query($conexion, $sql2);
+
+    $count = mysqli_num_rows($preT);
 
     // If result matched $myusername and $mypassword, table row must be 1 row
-
     if ($count == 1) {
-        header("location: ../back/admin.php");
+        header("location: ../front/asignRol.php");
     } else {
 ?>
         <div class="alert alert-danger" role="alert">
