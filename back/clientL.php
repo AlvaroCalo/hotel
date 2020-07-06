@@ -44,20 +44,21 @@ if (mysqli_connect_errno()) {
 
     <?php
     loadNavbar();
+    /* echo $_SESSION['user']; */
     ?>
 
     <div class="container">
-        <div class="row">
+        <!--         <div class="row">
             <a href="#clientInfo">Go to your personal info</a>
         </div>
         <div class="row">
             <a href="#reservationInfo">Go to reservations info</a>
-        </div>
+        </div> -->
 
         <main class="container-fluid">
-            <section class="row">
+            <section class="row m-3">
                 <div class="col">
-                    <h3 id="clientInfo" class="text-center">Your info<span><a class="btn" href="addUser.php">Update info</a></span></h3>
+                    <h3 id="clientInfo" class="text-center">Your info</h3>
                     <table class="table">
 
                         <?php
@@ -102,11 +103,26 @@ if (mysqli_connect_errno()) {
                         <?php
                         }
                         ?>
-
+                        <tr>
+                            <!-- <th>Update info</th> -->
+                            <td colspan="2" class="text-center">
+                                <form action="updateUserL.php" method="POST">
+                                    <input type="hidden" id="txtId" name="txtId" value="<?= $id; ?>" />
+                                    <input type="hidden" id="txtPass" name="txtPass" value="<?= $password; ?>" />
+                                    <input type="hidden" id="txtEmail" name="txtEmail" value="<?= $email; ?>" />
+                                    <input type="hidden" id="txtTel" name="txtTel" value="<?= $tel; ?>" />
+                                    <input type="hidden" id="txtStreet" name="txtStreet" value="<?= $streetName; ?>" />
+                                    <input type="hidden" id="txtPostalCode" name="txtPostalCode" value="<?= $postalCode; ?>" />
+                                    <input type="hidden" id="txtCity" name="txtCity" value="<?= $city; ?>" />
+                                    <input type="hidden" id="txtCountry" name="txtCountry" value="<?= $country; ?>" />
+                                    <button type="submit" id="btnEditar<?= $id; ?>" name="btnEdit" class="btn btn-warning">Update</button>
+                                </form>
+                            </td>
+                        </tr>
                     </table>
                 </div>
                 <div class="col">
-                    <h3 id="reservationInfo" class="text-center">Reservations list <span><a class="btn" href="addReservations.php">Add reservation</a></span> </h3>
+                    <h3 id="reservationInfo" class="text-center">Reservations list <span><a class="btn" href="addReservationL.php">Add reservation</a></span> </h3>
                     <table class="table">
                         <tr>
                             <th>Room</th>
