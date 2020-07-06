@@ -125,19 +125,7 @@ require_once("../phpfiles/functions.php");
                 </ul>
             </div>
             <div class="col-4 text-center">
-                <h5 class="p-3">Contact info</h5>
-                <div class="row">
-                    <div class="col">Phone number</div>
-                    <div class="col">943 666 666 669</div>
-                </div>
-                <div class="row">
-                    <div class="col">Fax</div>
-                    <div class="col">943 666 666 966</div>
-                </div>
-                <div class="row">
-                    <div class="col">E-mail</div>
-                    <div class="col">generalservices@hilberthotel.eu</div>
-                </div>
+            <a class="twitter-timeline" data-width="500" data-height="300" href="https://twitter.com/edusadeci?ref_src=twsrc%5Etfw">Tweets by edusadeci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </section>
 

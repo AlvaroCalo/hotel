@@ -36,11 +36,6 @@ if (mysqli_connect_errno()) {
 
 <body>
 
-    <?php
-    loadNavbar();
-    // echo $_POST['txtId'];
-    ?>
-
     <div class="container">
         <table class="table m-5">
             <?php
@@ -93,22 +88,6 @@ if (mysqli_connect_errno()) {
             <div class="col">
                 <a href="admin.php" class="btn btn-info m-1">Return</a>
             </div>
-            <div class="col">
-                <form action="updateUSER.php" method="POST">
-                    <input type="hidden" id="txtId" name="txtId" value="<?= $id; ?>" />
-                    <input type="hidden" id="txtPass" name="txtPass" value="<?= $password; ?>" />
-                    <input type="hidden" id="txtEmail" name="txtEmail" value="<?= $email; ?>" />
-                    <input type="hidden" id="txtTel" name="txtTel" value="<?= $tel; ?>" />
-                    <input type="hidden" id="txtStreet" name="txtStreet" value="<?= $streetName; ?>" />
-                    <input type="hidden" id="txtPostalCode" name="txtPostalCode" value="<?= $postalCode; ?>" />
-                    <input type="hidden" id="txtCity" name="txtCity" value="<?= $city; ?>" />
-                    <input type="hidden" id="txtCountry" name="txtCountry" value="<?= $country; ?>" />
-                    <input type="hidden" id="txtRol" name="txtRol" value="<?= $rol; ?>" />
-                    <button type="submit" id="btnEditar<?= $id; ?>" name="btnEdit" class="btn btn-warning">Update</button>
-                </form>
-            </div>
-
-
         </div>
 
     </div>
@@ -119,10 +98,6 @@ if (mysqli_connect_errno()) {
     //Paso 9: Cerrar la conexión
     mysqli_close($conexion);
     ?>
-    <?php
-    loadFooter();
-    ?>
-
 </body>
 
 </html>

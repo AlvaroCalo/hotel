@@ -42,18 +42,16 @@ if (mysqli_connect_errno()) {
 
 <body>
 
-    <?php
-    loadNavbar();
-    ?>
-
     <div class="container">
-        <div class="row">
+        <div class="row m">
+            <div class="col m-3">
             <a href="#clientList">Go to client list</a>
-        </div>
-        <div class="row">
+            </div>
+            <div class="col m-3">
             <a href="#reservationList">Go to reservation list</a>
+            </div>
         </div>
-
+        <a class="btn btn-danger m-5" href="logout.php">Log out</a>
         <main class="container-fluid">
             <section class="row">
                 <div class="col">
@@ -193,9 +191,7 @@ if (mysqli_connect_errno()) {
     //Paso 9: Cerrar la conexión
     mysqli_close($conexion);
     ?>
-    <?php
-    loadFooter();
-    ?>
+
     <script>
         function borrame(_id) {
             var _id = _id.substring(9);

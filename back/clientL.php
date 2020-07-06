@@ -42,11 +42,6 @@ if (mysqli_connect_errno()) {
 
 <body>
 
-    <?php
-    loadNavbar();
-    /* echo $_SESSION['user']; */
-    ?>
-
     <div class="container">
         <!--         <div class="row">
             <a href="#clientInfo">Go to your personal info</a>
@@ -104,8 +99,11 @@ if (mysqli_connect_errno()) {
                         }
                         ?>
                         <tr>
+                        <td class="text-center">
+                                <a class="btn btn-danger" href="logout.php">Log out</a>
+                            </td>
                             <!-- <th>Update info</th> -->
-                            <td colspan="2" class="text-center">
+                            <td class="text-center">
                                 <form action="updateUserL.php" method="POST">
                                     <input type="hidden" id="txtId" name="txtId" value="<?= $id; ?>" />
                                     <input type="hidden" id="txtPass" name="txtPass" value="<?= $password; ?>" />
@@ -185,9 +183,6 @@ if (mysqli_connect_errno()) {
 
     //Paso 9: Cerrar la conexión
     mysqli_close($conexion);
-    ?>
-    <?php
-    loadFooter();
     ?>
     <script>
         function borrame(_id) {

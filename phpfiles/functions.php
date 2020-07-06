@@ -17,7 +17,7 @@ function loadNavbar()
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php">Hotel</a>
                     </li>
                     <li class="nav-item">
@@ -106,7 +106,7 @@ function doLogin()
     # asocio los nombres de campo a nombres de variables
     mysqli_stmt_bind_result($pre, $id, $rol);
     # Capturo los resultados y los guardo en un array
-    $registros[] = null;
+    $registros = null;
     while (mysqli_stmt_fetch($pre)) {
         $registros = array(
             'user' => $id,
