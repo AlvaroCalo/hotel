@@ -93,6 +93,16 @@ require_once("../phpfiles/functions.php");
     loadFooter();
     ?>
 
+    <script>
+        $(document).ready(function() {
+            //console.log("ready");
+            // adds the active class to the select page in the navbar
+            $('[href*="index.php"]').removeClass('active');
+            $('[href*="guest-rooms.php"]').addClass('active');
+
+        });
+    </script>
+
 </body>
 
 </html>

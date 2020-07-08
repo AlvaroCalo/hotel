@@ -156,7 +156,7 @@ if (mysqli_connect_errno()) {
                                         <button onclick="borrameR(this.id);" type="button" id="btnDelete<?= $idr; ?>" name="btnDelete" class="btn btn-danger">Delete</button>
                                     </td>
                                     <td>
-                                        <form action="updateReservations.php" method="POST">
+                                        <form action="updateReservationsL.php" method="POST">
                                             <input type="hidden" id="txtIdr" name="txtIdr" value="<?= $idr; ?>" />
                                             <input type="hidden" id="txtRoom" name="txtRoom" value="<?= $roomName; ?>" />
                                             <input type="hidden" id="txtUser" name="txtUser" value="<?= $user; ?>" />

@@ -211,7 +211,7 @@ if (mysqli_connect_errno()) {
                                 //alertify.success('Registro borrado');
                             } else {
                                 alertify
-                                    .alert("Ha ocurrido un error", "Algo ha salido mal, repite el proceso.", function() {}).set('label', 'Vale :(');
+                                    .alert("Ha ocurrido un error", "Comprueba que el usuario no tenga reservas y vuelve a intentarlo.", function() {}).set('label', 'Vale :(');
                             }
                         },
                         error: function(error) {

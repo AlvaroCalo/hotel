@@ -34,3 +34,15 @@ tab-pane {
 .colorea {
     background-color: yellow !important;
 }
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+.carousel-indicators li {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+}

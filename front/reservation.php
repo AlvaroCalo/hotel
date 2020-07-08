@@ -6,26 +6,28 @@ $error = '';
 $userName = '';
 $userPass = '';
 
-function cleanChains($chain) {
-    $chain = trim($chain); 
-    $chain = stripslashes($chain); 
-    $chain = strip_tags($chain, ""); 
-    $chain = htmlspecialchars($chain); 
+function cleanChains($chain)
+{
+    $chain = trim($chain);
+    $chain = stripslashes($chain);
+    $chain = strip_tags($chain, "");
+    $chain = htmlspecialchars($chain);
     return $chain;
 }
 
-function formVal() {
+function formVal()
+{
     global $error, $userName, $userPass;
     $valida = true;
 
-    if( empty($_POST['txtEmailL']) ) {
+    if (empty($_POST['txtEmailL'])) {
         $valida = false;
         $error .= '<p> <label class="text-danger">Your email address is mandatory</label></p>';
     } else {
         $userName = cleanChains($_POST['txtEmailL']);
     }
 
-    if( empty($_POST['txtPasswordL']) ) {
+    if (empty($_POST['txtPasswordL'])) {
         $valida = false;
         $error .= '<p> <label class="text-danger">La contraseña no puede estar vacía</label></p>';
     } else {
@@ -35,7 +37,7 @@ function formVal() {
     return $valida;
 }
 
-if ( isset($_POST['btnSubmit']) ) {
+if (isset($_POST['btnSubmit'])) {
     if (formVal()) {
         doLogin();
     }
@@ -67,7 +69,7 @@ if ( isset($_POST['btnSubmit']) ) {
     ?>
 
     <main class="container">
-        <section class="row h-100 text-center m-5">
+        <section class="row text-center m-5">
             <div class="col-6" id="login">
                 <h4>Log in</h4>
                 <form action="<?php $_PHP_SELF ?>" method="POST">
@@ -115,7 +117,9 @@ if ( isset($_POST['btnSubmit']) ) {
             $("#txtPasswordL").blur(function() {
                 $("#txtPasswordL").removeClass("colorea");
             });
-
+            // adds the active class to the select page in the navbar
+            $('[href*="index.php"]').removeClass('active');
+            $('[href*="reservation.php"]').addClass('active');
 
         });
     </script>

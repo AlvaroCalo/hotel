@@ -14,9 +14,12 @@ require_once("../phpfiles/functions.php");
     <!-- CSS:fontawesome, bootstrap, custom -->
     <link rel="stylesheet" href="../fontawesome-free-5.12.0-web/css/all.min.css" />
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../alertify/css/alertify.min.css" />
+    <link rel="stylesheet" href="../cookiealert/cookiealert.css" />
     <link rel="stylesheet" href="../css/front.css" />
     <!-- JQuery -->
     <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../alertify/alertify.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 
@@ -82,7 +85,7 @@ require_once("../phpfiles/functions.php");
                     <div class="card-body">
                         <h5 class="card-title">Complete meal services</h5>
                         <p class="card-text">We stole our chef from the best restaurant in the country.</p>
-                        <a href="#" class="btn btn-primary">Check out our menu</a>
+                        <a href="menu.php" class="btn btn-primary">Check out our menu</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +97,7 @@ require_once("../phpfiles/functions.php");
                     <div class="card-body">
                         <h5 class="card-title">Book a room</h5>
                         <p class="card-text">We run the very best hotel in the city. Period.</p>
-                        <a href="#" class="btn btn-primary">Book now!</a>
+                        <a href="reservation.php" class="btn btn-primary">Book now!</a>
                     </div>
                 </div>
             </div>
@@ -106,7 +109,7 @@ require_once("../phpfiles/functions.php");
                     <div class="card-body">
                         <h5 class="card-title">Services</h5>
                         <p class="card-text">Our services have the label ISO 69. Your safety is important to us.</p>
-                        <a href="#" class="btn btn-primary">View services</a>
+                        <a href="services.php" class="btn btn-primary">View services</a>
                     </div>
                 </div>
             </div>
@@ -125,24 +128,46 @@ require_once("../phpfiles/functions.php");
                 </ul>
             </div>
             <div class="col-4 text-center">
-            <a class="twitter-timeline" data-width="500" data-height="300" href="https://twitter.com/edusadeci?ref_src=twsrc%5Etfw">Tweets by edusadeci</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a class="twitter-timeline" data-width="500" data-height="300" href="https://twitter.com/edusadeci?ref_src=twsrc%5Etfw">Tweets by edusadeci</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </section>
 
         <section class="row">
             <div class="col-12">
-                <a href="sansebastian.html">
+                <a href="sansebastian.php">
                     <h6 class="text-center">Visit San Sebastian</h6>
                 </a>
-                <a href="sansebastian.html"><img class="w-100" src="../img/misc/Panorama_from_Monte_Igueldo_(5106955283).jpg" alt="San Sebastian panorama" /></a>
+                <a href="sansebastian.php"><img class="w-100" src="../img/misc/Panorama_from_Monte_Igueldo_(5106955283).jpg" alt="San Sebastian panorama" /></a>
             </div>
         </section>
     </main>
     <!-- ======= End main ======= -->
+    <div class="alert alert-dismissible text-center cookiealert" role="alert">
+        <div class="cookiealert-container">
+            <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="http://cookiesandyou.com/" target="_blank">Learn more</a>
 
+            <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+                I agree
+            </button>
+        </div>
+    </div>
     <?php
     loadFooter();
     ?>
+
+    <!-- Coockie alert -->
+    <script src="../cookiealert/cookiealert.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            //console.log("ready");
+            window.addEventListener("cookieAlertAccept", function() {
+                alertify.alert("Hilbert Hotel", "You have accepted the cookies. Have fun!", function() {
+                    });
+            })
+        });
+    </script>
 
 </body>
 

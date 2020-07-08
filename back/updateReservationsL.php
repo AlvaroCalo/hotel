@@ -4,7 +4,6 @@ include_once '../phpfiles/functions.php';
 if (isset($_POST['btnUpdate'])) {
     $ident = $_POST['txtIdr'];
     $rRoom = $_POST['txtRoom'];
-    $rUser = $_POST['txtUser'];
     $rArrival = $_POST['txtArrival'];
     $rDeparture = $_POST['txtDeparture'];
     $returRoom = giveReservedRoomId($ident);
@@ -15,7 +14,6 @@ if (isset($_POST['btnUpdate'])) {
 <?php
 $mIdent = '';
 $mRoom = '';
-$mUser = '';
 $mArrival = '';
 $mDeparture = '';
 function cleanChain($chain)
@@ -28,7 +26,7 @@ function cleanChain($chain)
 
 function formVal()
 {
-    global $mIdent, $mRoom, $mUser, $mArrival, $mDeparture;
+    global $mIdent, $mRoom, $mArrival, $mDeparture;
     $valida = true;
     $error = '';
 
@@ -40,8 +38,6 @@ function formVal()
     }
 
     $mRoom = $_POST['txtUroom'];
-
-    $mUser = $_POST['txtrUser'];
 
     if (empty($_POST['txtrArrival'])) {
         $valida = false;
@@ -73,17 +69,16 @@ if (isset($_POST['btnSend'])) {
         # Connection to the data base
         $conn = mysqli_connect($host, $user, $password, $db);
         # Preparing the sentence with ?
-        $sql = "UPDATE reservations SET roomId= ?, userId = ?, arrival = ?, departure = ? WHERE id = ?";
+        $sql = "UPDATE reservations SET roomId= ?, arrival = ?, departure = ? WHERE id = ?";
         # Aux var neede to proper form load in the submit process
         $rRoom = $mRoom;
-        $rUser = $mUser;
         $rArrival = $mArrival;
         $rDeparture = $mDeparture;
         $rIdent = $mIdent;
         # Preparing the query
         $pre = mysqli_prepare($conn, $sql);
         # the data to update and the type
-        mysqli_stmt_bind_param($pre, "iissi", $rRoom, $rUser, $rArrival, $rDeparture, $rIdent);
+        mysqli_stmt_bind_param($pre, "issi", $rRoom, $rArrival, $rDeparture, $rIdent);
         # Ejecuto la consulta
         mysqli_stmt_execute($pre);
         # Cierro la consulta y la conexión
@@ -145,13 +140,6 @@ if (isset($_POST['btnSend'])) {
                     </div>
 
                     <div class="form-group">
-                        <label for="txtrUser">Select a client</label>
-                        <select id="txtrUser" name="txtrUser" class="custom-select">
-                            <!-- cargo los options con llamada ajax -->
-                        </select>
-                    </div>
-
-                    <div class="form-group">
                         <label for="txtrArrival">Arrival:
                             <input pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" type="date" class="form-control" id="txtrArrival" name="txtrArrival" value="<?= $rArrival ?>" required />
                         </label>
@@ -165,7 +153,7 @@ if (isset($_POST['btnSend'])) {
 
                     <button type="submit" id="btnSend" name="btnSend" class="btn btn-primary mb-3">Modify reservation</button>
 
-                    <a href="admin.php" id="btnAdmin" name="btnAdmin" class="btn btn-primary mb-3">Back to admin panel</a>
+                    <a href="clientL.php" id="btnAdmin" name="btnAdmin" class="btn btn-primary mb-3">Back to user panel</a>
                 </form>
             </div>
         </div>
@@ -199,36 +187,9 @@ if (isset($_POST['btnSend'])) {
                 }
             });
 
-            // loads the users in the select
-            var opcionU = "";
-            $.ajax({ // loads the type
-                url: 'users.php',
-                method: 'GET',
-                dataType: "json",
-                data: {},
-                success: function(data) {
-                    $.each(data, function(i, v) {
-                        if (v.id == <?php echo json_encode($returnUser); ?>) {
-                            opcionU += '<option value="' + v.id + '" selected>' + v.name + '</option>';
-                        } else {
-                            opcionU += '<option value="' + v.id + '">' + v.name + '</option>';
-                        }
-                    });
-                    $("#txtrUser").html(opcionU);
-                    console.log(opcion);
-                },
-                error: function(error) {
-                    console.log("error!");
-                }
-            });
-
             // with this changes the selected option when the page is loaded and the user changes it for submmiting the form
             $("#txtUroom").change(function() {
                 $("#txtUroom option:selected").attr("selected", true).siblings().removeAttr("selected");
-            });
-
-            $("#txtrUser").change(function() {
-                $("#txtrUser option:selected").attr("selected", true).siblings().removeAttr("selected");
             });
 
         });
