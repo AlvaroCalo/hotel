@@ -196,7 +196,7 @@ if (mysqli_connect_errno()) {
         function borrame(_id) {
             var _id = _id.substring(9);
             console.log(_id);
-            alertify.confirm("Borrar registro", "¿Quieres borrar el registro?",
+            alertify.confirm("Delete record", "Do you want to delete the record?",
                 function() {
                     $.ajax({
                         url: 'deleteUser.php',
@@ -211,7 +211,7 @@ if (mysqli_connect_errno()) {
                                 //alertify.success('Registro borrado');
                             } else {
                                 alertify
-                                    .alert("Ha ocurrido un error", "Comprueba que el usuario no tenga reservas y vuelve a intentarlo.", function() {}).set('label', 'Vale :(');
+                                    .alert("There is an error", "Check that the user has not any reservation and try again.", function() {}).set('label', 'Vale :(');
                             }
                         },
                         error: function(error) {
@@ -220,9 +220,9 @@ if (mysqli_connect_errno()) {
                     });
                 },
                 function() {
-                    alertify.error('Borrado cancelado');
+                    alertify.error('Delete record canceled');
                 }).set('labels', {
-                ok: 'Sí, bórralo.',
+                ok: 'Yes, delete',
                 cancel: '¡NO!'
             });
         };
@@ -230,7 +230,7 @@ if (mysqli_connect_errno()) {
         function borrameR(_id) {
             var _id = _id.substring(9);
             console.log(_id);
-            alertify.confirm("Borrar registro", "¿Quieres borrar el registro?",
+            alertify.confirm("Delete record", "Do you want to delete the record?",
                 function() {
                     $.ajax({
                         url: 'deleteReservations.php',
@@ -245,7 +245,7 @@ if (mysqli_connect_errno()) {
                                 //alertify.success('Registro borrado');
                             } else {
                                 alertify
-                                    .alert("Ha ocurrido un error", "Algo ha salido mal, repite el proceso.", function() {}).set('label', 'Vale :(');
+                                    .alert("There is an error", "Something went wrong", function() {}).set('label', 'OK :(');
                             }
                         },
                         error: function(error) {
@@ -254,9 +254,9 @@ if (mysqli_connect_errno()) {
                     });
                 },
                 function() {
-                    alertify.error('Borrado cancelado');
+                    alertify.error('Delete record canceled');
                 }).set('labels', {
-                ok: 'Sí, bórralo.',
+                ok: 'Yes, delete',
                 cancel: '¡NO!'
             });
         };

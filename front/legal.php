@@ -29,7 +29,7 @@ require_once("../phpfiles/functions.php");
     <main class="container text-center">
 
         <h1>Dummy website</h1>
-        <p>This website is not meant to be use. It's only a final proyecto of a course I attended.</p>
+        <p>This website is not meant to be use. It's only a final proyect of a course I attended.</p>
 
         <h3 class="m-1">Applies to different pages</h3>
 
